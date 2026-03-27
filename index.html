@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
-        
+       
         .logo-font { font-family: 'Space Grotesk', sans-serif; }
         .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
-        
-        .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .product-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgb(0 212 255 / 0.25); }
-        
+       
+        .product-card { 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .product-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 25px 50px -12px rgb(0 212 255 / 0.25); 
+        }
+       
         .floating-btn {
             position: fixed;
             bottom: 20px;
@@ -40,14 +45,12 @@
                 <h1 class="logo-font text-3xl font-semibold tracking-tighter">Mobile Fashion</h1>
                 <span class="text-cyan-400 text-xs font-medium tracking-widest mt-1">ENTERPRISE</span>
             </div>
-
             <div class="hidden md:flex gap-8 text-sm font-medium">
                 <a href="#home" class="hover:text-cyan-400">Home</a>
                 <a href="#shop" class="hover:text-cyan-400">Shop</a>
                 <a href="#compare" class="hover:text-cyan-400">Compare</a>
                 <a href="#about" class="hover:text-cyan-400">About Us</a>
             </div>
-
             <div class="flex items-center gap-6">
                 <button onclick="toggleSearch()" class="text-2xl hover:text-cyan-400"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <button onclick="showCart()" class="relative text-2xl hover:text-cyan-400">
@@ -75,7 +78,6 @@
             <div class="flex justify-center">
                 <div class="relative">
                     <div class="w-80 h-80 bg-cyan-400/10 rounded-[4rem] flex items-center justify-center">
-                        <!-- Replace with your GitHub image later -->
                         <img src="https://via.placeholder.com/400x400/111827/00d4ff?text=Hero+Phone" alt="Hero Phone" class="w-64 rotate-[-12deg]">
                     </div>
                 </div>
@@ -87,10 +89,10 @@
     <section id="shop" class="py-20 bg-white text-black">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl font-semibold mb-4">Featured Products</h2>
-            <p class="text-gray-600 mb-10">Upload your real product images to GitHub and replace the placeholder URLs below.</p>
-
+            <p class="text-gray-600 mb-10">All prices in Zambian Kwacha (ZMW)</p>
+            
             <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Products populated by JavaScript -->
+                <!-- Products will be loaded here from JSON -->
             </div>
         </div>
     </section>
@@ -100,23 +102,21 @@
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl font-semibold text-white mb-3">Compare Phones</h2>
             <p class="text-cyan-400 mb-10">Make the right choice by comparing price and key features</p>
-            
+           
             <div class="bg-black rounded-3xl p-8">
                 <div class="grid md:grid-cols-12 gap-8">
                     <div class="md:col-span-5">
                         <select id="phone1" class="w-full bg-zinc-800 text-white rounded-2xl px-6 py-5 text-lg">
-                            <!-- JS populated -->
                         </select>
                     </div>
                     <div class="md:col-span-2 flex justify-center items-center text-4xl font-bold text-cyan-400">VS</div>
                     <div class="md:col-span-5">
                         <select id="phone2" class="w-full bg-zinc-800 text-white rounded-2xl px-6 py-5 text-lg">
-                            <!-- JS populated -->
                         </select>
                     </div>
                 </div>
                 <button onclick="performComparison()" class="mt-8 w-full bg-cyan-400 text-black py-5 rounded-3xl font-semibold text-xl">Compare Now</button>
-                
+               
                 <div id="comparison-result" class="hidden mt-12 grid grid-cols-2 gap-8">
                     <!-- JS populated -->
                 </div>
@@ -131,46 +131,23 @@
                 <div>
                     <h2 class="text-5xl font-semibold tracking-tighter mb-8">About Mobile Fashion Enterprise</h2>
                     <p class="text-lg leading-relaxed text-gray-700">
-                        Based in Lusaka, Zambia, Mobile Fashion Enterprise brings the latest smartphones, laptops, and premium accessories to our customers. 
-                        We believe technology should not only perform well but also look stylish.
-                    </p>
-                    <p class="text-lg leading-relaxed text-gray-700 mt-6">
-                        Whether you're looking for a flagship phone, a powerful laptop for work, or the perfect accessories to complete your setup, 
-                        we curate only the best products with reliable after-sales support.
+                        Based in Lusaka, Zambia, Mobile Fashion Enterprise brings quality smartphones, laptops, and accessories to our customers at affordable prices.
                     </p>
                 </div>
-                
-                <!-- Why Choose Us -->
                 <div>
                     <h3 class="text-3xl font-semibold mb-8">Why Choose Us?</h3>
                     <div class="space-y-8">
                         <div class="flex gap-6">
                             <div class="text-4xl">🚀</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Latest Devices</h4>
-                                <p class="text-gray-600">We stock the newest models as soon as they launch.</p>
-                            </div>
+                            <div><h4 class="font-semibold text-xl">Affordable Prices</h4><p class="text-gray-600">Best prices in Lusaka</p></div>
                         </div>
                         <div class="flex gap-6">
                             <div class="text-4xl">🛡️</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Genuine Products</h4>
-                                <p class="text-gray-600">100% authentic devices with full manufacturer warranty.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div class="text-4xl">💰</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Competitive Prices</h4>
-                                <p class="text-gray-600">Best value in Zambia with flexible payment options.</p>
-                            </div>
+                            <div><h4 class="font-semibold text-xl">Genuine Products</h4><p class="text-gray-600">Original and quality assured</p></div>
                         </div>
                         <div class="flex gap-6">
                             <div class="text-4xl">📍</div>
-                            <div>
-                                <h4 class="font-semibold text-xl">Local Support</h4>
-                                <p class="text-gray-600">Fast delivery in Lusaka and reliable after-sales service.</p>
-                            </div>
+                            <div><h4 class="font-semibold text-xl">Local Support</h4><p class="text-gray-600">Fast delivery in Lusaka</p></div>
                         </div>
                     </div>
                 </div>
@@ -186,13 +163,11 @@
                     <div class="w-10 h-10 bg-cyan-400 rounded-2xl flex items-center justify-center text-3xl text-black">📱</div>
                     <h1 class="logo-font text-3xl">Mobile Fashion Enterprise</h1>
                 </div>
-                
                 <div>
                     <p class="text-white/60">Lusaka, Zambia</p>
                     <a href="mailto:bandaamos98@gmail.com" class="text-cyan-400 hover:underline block mt-2">bandaamos98@gmail.com</a>
                     <a href="tel:0979077079" class="text-cyan-400 hover:underline block">+260 979 077 079</a>
                 </div>
-                
                 <div class="text-white/50 text-sm">
                     © 2026 Mobile Fashion Enterprise. All Rights Reserved.
                 </div>
@@ -202,71 +177,51 @@
 
     <!-- FLOATING BUTTONS -->
     <a href="https://wa.me/260979077079?text=Hello%20Mobile%20Fashion%20Enterprise%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" 
-       target="_blank"
-       class="floating-btn bg-green-500 text-white bottom-20 right-6">
+       target="_blank" class="floating-btn bg-green-500 text-white bottom-20 right-6">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-    
-    <a href="tel:0979077079" 
-       class="floating-btn bg-cyan-400 text-black bottom-6 right-6">
+   
+    <a href="tel:0979077079" class="floating-btn bg-cyan-400 text-black bottom-6 right-6">
         <i class="fa-solid fa-phone"></i>
     </a>
 
-    <!-- Product Data & Scripts -->
     <script>
-        // === PRODUCT DATA (REPLACE IMAGE URLS WITH YOUR GITHUB RAW LINKS) ===
-        let products = [
-            {
-                id: 1,
-                name: "iPhone 16 Pro",
-                category: "phone",
-                price: 1299,
-                description: "Latest flagship with titanium design and powerful A18 Pro chip.",
-                img: "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/images/iphone16pro.jpg"   // ← CHANGE THIS
-            },
-            {
-                id: 2,
-                name: "Samsung Galaxy S25 Ultra",
-                category: "phone",
-                price: 1199,
-                description: "Premium Android with S Pen and 200MP camera.",
-                img: "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/images/s25ultra.jpg"
-            },
-            {
-                id: 3,
-                name: "MacBook Air M3",
-                category: "laptop",
-                price: 1299,
-                description: "Ultra-thin laptop with exceptional battery life.",
-                img: "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/images/macbookair.jpg"
-            },
-            {
-                id: 4,
-                name: "AirPods Pro 2",
-                category: "accessory",
-                price: 249,
-                description: "Premium wireless earbuds with active noise cancellation.",
-                img: "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/images/airpods.jpg"
-            }
-            // Add more products here as needed
-        ];
-
+        let products = [];
         let cart = [];
 
-        // Render products
+        // Load products from JSON file
+        async function loadProducts() {
+            try {
+                const response = await fetch('https://bandaamos98-create.github.io/mobile-fashion/products.json');
+                const data = await response.json();
+                products = data.products || [];
+                
+                renderProducts();
+                populateComparisonSelects();
+            } catch (error) {
+                console.error("Failed to load products:", error);
+                document.getElementById('products-grid').innerHTML = `
+                    <div class="col-span-full text-center py-12 text-red-500">
+                        Failed to load products. Please check if products.json is correctly uploaded.
+                    </div>`;
+            }
+        }
+
         function renderProducts() {
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
-            
+
             products.forEach(product => {
                 const card = `
                 <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
-                    <img src="${product.img}" alt="${product.name}" class="w-full h-56 object-cover">
+                    <img src="${product.img}" alt="${product.name}" 
+                         class="w-full h-56 object-cover" 
+                         onerror="this.src='https://via.placeholder.com/400x300?text=Image+Not+Found'">
                     <div class="p-6">
                         <h3 class="font-semibold text-2xl">${product.name}</h3>
                         <p class="text-white/60 text-sm mt-2 line-clamp-2">${product.description}</p>
                         <div class="flex justify-between items-center mt-6">
-                            <span class="text-3xl font-bold">$${product.price}</span>
+                            <span class="text-3xl font-bold">ZMW ${product.price.toLocaleString()}</span>
                             <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
                                     class="bg-cyan-400 text-black px-6 py-3 rounded-2xl font-medium">Add to Cart</button>
                         </div>
@@ -278,9 +233,11 @@
 
         function addToCart(id) {
             const product = products.find(p => p.id === id);
-            cart.push(product);
-            document.getElementById('cart-count').textContent = cart.length;
-            alert(`${product.name} added to cart!`);
+            if (product) {
+                cart.push(product);
+                document.getElementById('cart-count').textContent = cart.length;
+                alert(`${product.name} added to cart!`);
+            }
         }
 
         function showCart() {
@@ -289,23 +246,65 @@
                 return;
             }
             let total = cart.reduce((sum, item) => sum + item.price, 0);
-            alert(`Cart total: $${total}\n\n(This is a demo. In a real site you would show full cart here.)`);
+            alert(`Cart Total: ZMW ${total.toLocaleString()}\n\n(This is a demo site)`);
         }
 
         function toggleSearch() {
-            const term = prompt("Search products (demo):");
-            if (term) alert("Searching for: " + term + "\n\nIn full version this would filter products.");
+            const term = prompt("Search products:");
+            if (term) {
+                alert("Search feature coming soon. Currently showing all products.");
+            }
         }
 
-        // Simple comparison (demo)
+        function populateComparisonSelects() {
+            const phones = products.filter(p => p.category === "phone");
+            const select1 = document.getElementById('phone1');
+            const select2 = document.getElementById('phone2');
+
+            select1.innerHTML = '<option value="">Select Phone 1</option>';
+            select2.innerHTML = '<option value="">Select Phone 2</option>';
+
+            phones.forEach(phone => {
+                const opt1 = new Option(phone.name, phone.id);
+                const opt2 = new Option(phone.name, phone.id);
+                select1.add(opt1);
+                select2.add(opt2);
+            });
+        }
+
         function performComparison() {
-            alert("Comparison feature active in full version.\nSelect two phones to compare price & description.");
+            const id1 = parseInt(document.getElementById('phone1').value);
+            const id2 = parseInt(document.getElementById('phone2').value);
+
+            if (!id1 || !id2 || id1 === id2) {
+                alert("Please select two different phones to compare.");
+                return;
+            }
+
+            const phone1 = products.find(p => p.id === id1);
+            const phone2 = products.find(p => p.id === id2);
+
+            const resultDiv = document.getElementById('comparison-result');
+            resultDiv.innerHTML = `
+                <div class="bg-zinc-800 p-6 rounded-3xl">
+                    <img src="${phone1.img}" class="w-full h-48 object-cover rounded-2xl mb-4" onerror="this.src='https://via.placeholder.com/400x300?text=Image+Not+Found'">
+                    <h4 class="font-semibold text-xl">${phone1.name}</h4>
+                    <p class="text-cyan-400 text-2xl font-bold mt-2">ZMW ${phone1.price.toLocaleString()}</p>
+                    <p class="text-sm mt-4 text-gray-400">${phone1.description}</p>
+                </div>
+                <div class="bg-zinc-800 p-6 rounded-3xl">
+                    <img src="${phone2.img}" class="w-full h-48 object-cover rounded-2xl mb-4" onerror="this.src='https://via.placeholder.com/400x300?text=Image+Not+Found'">
+                    <h4 class="font-semibold text-xl">${phone2.name}</h4>
+                    <p class="text-cyan-400 text-2xl font-bold mt-2">ZMW ${phone2.price.toLocaleString()}</p>
+                    <p class="text-sm mt-4 text-gray-400">${phone2.description}</p>
+                </div>
+            `;
+            resultDiv.classList.remove('hidden');
         }
 
         // Initialize
         window.onload = () => {
-            renderProducts();
-            console.log("%c✅ Mobile Fashion Enterprise website ready. Replace GitHub image URLs in the products array.", "color:#22d3ee; font-weight:600");
+            loadProducts();
         };
     </script>
 </body>
