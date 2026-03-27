@@ -113,6 +113,18 @@
       "role": "IT SPECIALIST",
       "quote": "Demonstration Purposes Only.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/profile-pic.png"
+    },
+        {
+      "name": "THE DJ HIMSELF",
+      "role": "He keeps the store live",
+      "quote": "100% Advertises the premises through his music.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/live1.jpg"
+    },
+        {
+      "name": "The Lady Herself",
+      "role": "Customer Care",
+      "quote": "Handles all querries and resolve issue.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/firstlive.jpg"
     }
   ]
 }
