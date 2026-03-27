@@ -12,20 +12,7 @@
         .logo-font { font-family: 'Space Grotesk', sans-serif; }
         
         .hero-bg {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f172a 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(34, 211, 238, 0.15) 0%, transparent 50%);
-            pointer-events: none;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
         }
 
         .product-card {
@@ -36,17 +23,20 @@
             box-shadow: 0 30px 60px -15px rgb(34 211 238 / 0.3);
         }
 
+        .staff-slide {
+            transition: opacity 0.8s ease-in-out;
+        }
+
         .floating-btn {
             position: fixed;
-            bottom: 20px;
             z-index: 10000;
-            width: 60px;
-            height: 60px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             font-size: 28px;
         }
     </style>
@@ -54,19 +44,19 @@
 <body class="bg-zinc-950 text-white">
 
     <!-- NAVBAR -->
-    <nav class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
+    <nav class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-11 h-11 bg-cyan-400 rounded-3xl flex items-center justify-center text-4xl text-black shadow-lg">📱</div>
+                <div class="w-11 h-11 bg-cyan-400 rounded-3xl flex items-center justify-center text-4xl text-black">📱</div>
                 <h1 class="logo-font text-3xl font-bold tracking-tighter">Mobile Fashion</h1>
-                <span class="text-cyan-400 text-xs font-medium tracking-[3px] mt-1">ENTERPRISE</span>
+                <span class="text-cyan-400 text-xs font-medium tracking-widest">ENTERPRISE</span>
             </div>
 
             <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
-                <a href="#shop" class="hover:text-cyan-400 transition-colors">Shop</a>
-                <a href="#compare" class="hover:text-cyan-400 transition-colors">Compare</a>
-                <a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a>
+                <a href="#home" class="hover:text-cyan-400">Home</a>
+                <a href="#shop" class="hover:text-cyan-400">Shop</a>
+                <a href="#compare" class="hover:text-cyan-400">Compare</a>
+                <a href="#about" class="hover:text-cyan-400">About Us</a>
             </div>
 
             <div class="flex items-center gap-6">
@@ -75,48 +65,22 @@
                     <i class="fa-solid fa-shopping-cart"></i>
                     <span id="cart-count" class="absolute -top-1 -right-1 bg-cyan-400 text-black text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
                 </button>
-                <a href="mailto:bandaamos98@gmail.com" class="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium transition-colors">Email Us</a>
+                <a href="mailto:bandaamos98@gmail.com" class="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium">Email Us</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO - Improved -->
-    <section id="home" class="hero-bg py-28 md:py-36">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-3xl text-sm">
-                    <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-                    NEW ARRIVALS IN LUSAKA
-                </div>
-                
-                <h1 class="text-6xl md:text-7xl font-bold tracking-tighter logo-font leading-none">
-                    Premium Tech.<br>
-                    <span class="text-cyan-400">Zambian Style.</span>
-                </h1>
-                
-                <p class="text-xl text-white/70 max-w-md">
-                    Latest smartphones, powerful laptops &amp; quality accessories at the best prices in Lusaka.
-                </p>
-
-                <div class="flex flex-wrap gap-4">
-                    <a href="#shop" class="bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-10 py-4 rounded-3xl text-lg transition-all">Shop Now</a>
-                    <a href="#compare" class="border-2 border-white/60 hover:border-white px-8 py-4 rounded-3xl text-lg font-medium transition-all">Compare Phones</a>
-                </div>
+    <!-- HERO - MEET OUR STAFF SLIDESHOW -->
+    <section id="home" class="hero-bg py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tighter logo-font">MEET OUR STAFF</h1>
+                <p class="text-cyan-400 mt-3 text-lg">The friendly team behind Mobile Fashion Enterprise</p>
             </div>
 
-            <!-- Hero Phone Image - Now using one of your real images -->
-            <div class="flex justify-center relative">
-                <div class="w-80 md:w-96 h-80 md:h-96 bg-gradient-to-br from-cyan-400/20 to-transparent rounded-[4rem] flex items-center justify-center p-8 shadow-2xl">
-                    <img id="hero-image" 
-                         src="https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/camon50pro.jpg" 
-                         alt="TECHNO CAMON 50 PRO"
-                         class="w-full h-full object-contain drop-shadow-2xl rotate-[-8deg]">
-                </div>
-                
-                <!-- Floating badge -->
-                <div class="absolute -top-6 -right-6 bg-black/80 backdrop-blur-md text-cyan-400 text-sm font-medium px-6 py-3 rounded-3xl border border-cyan-400/30">
-                    🔥 Best Seller
-                </div>
+            <!-- Staff Slideshow -->
+            <div id="staff-slideshow" class="relative max-w-4xl mx-auto h-[520px] rounded-3xl overflow-hidden shadow-2xl">
+                <!-- Slides populated by JS -->
             </div>
         </div>
     </section>
@@ -124,12 +88,7 @@
     <!-- SHOP SECTION -->
     <section id="shop" class="py-20 bg-white text-black">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-5xl font-semibold tracking-tight">Featured Products</h2>
-                    <p class="text-gray-600 mt-2">All prices in Zambian Kwacha (ZMW)</p>
-                </div>
-            </div>
+            <h2 class="text-5xl font-semibold tracking-tight mb-12 text-center">Featured Products</h2>
             
             <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 <!-- Populated by JS -->
@@ -140,24 +99,22 @@
     <!-- COMPARE SECTION -->
     <section id="compare" class="py-20 bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-semibold tracking-tight text-white mb-3">Compare Phones</h2>
-            <p class="text-cyan-400 mb-10">Choose wisely — compare specs and price side by side</p>
+            <h2 class="text-5xl font-semibold tracking-tight text-white mb-3 text-center">Compare Phones</h2>
+            <p class="text-cyan-400 text-center mb-12">Make the right choice</p>
             
-            <div class="bg-black rounded-3xl p-10">
+            <div class="bg-black rounded-3xl p-10 max-w-3xl mx-auto">
                 <div class="grid md:grid-cols-12 gap-8 items-end">
                     <div class="md:col-span-5">
-                        <select id="phone1" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg outline-none"></select>
+                        <select id="phone1" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select>
                     </div>
-                    <div class="md:col-span-2 text-center text-5xl font-bold text-cyan-400">VS</div>
+                    <div class="md:col-span-2 text-center text-5xl font-bold text-cyan-400 py-4">VS</div>
                     <div class="md:col-span-5">
-                        <select id="phone2" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg outline-none"></select>
+                        <select id="phone2" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select>
                     </div>
                 </div>
-                <button onclick="performComparison()" 
-                        class="mt-10 w-full bg-cyan-400 hover:bg-cyan-300 text-black py-6 rounded-3xl text-xl font-semibold">
+                <button onclick="performComparison()" class="mt-10 w-full bg-cyan-400 hover:bg-cyan-300 text-black py-6 rounded-3xl text-xl font-semibold">
                     Compare Now
                 </button>
-                
                 <div id="comparison-result" class="hidden mt-12 grid grid-cols-2 gap-8"></div>
             </div>
         </div>
@@ -165,71 +122,68 @@
 
     <!-- ABOUT US -->
     <section id="about" class="py-20 bg-white text-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="text-5xl font-semibold tracking-tighter mb-8">About Mobile Fashion Enterprise</h2>
-                    <p class="text-lg leading-relaxed text-gray-700">
-                        We are a trusted electronics store based in Lusaka, Zambia. 
-                        Our mission is to bring quality smartphones, laptops and accessories to Zambians at affordable prices.
-                    </p>
-                </div>
-                <div>
-                    <h3 class="text-3xl font-semibold mb-8">Why Choose Us?</h3>
-                    <div class="grid grid-cols-1 gap-8">
-                        <div class="flex gap-5">
-                            <span class="text-4xl">💰</span>
-                            <div><h4 class="font-semibold">Best Prices</h4><p class="text-gray-600">Competitive rates in Lusaka</p></div>
-                        </div>
-                        <div class="flex gap-5">
-                            <span class="text-4xl">🛡️</span>
-                            <div><h4 class="font-semibold">Genuine Products</h4><p class="text-gray-600">100% original with warranty</p></div>
-                        </div>
-                        <div class="flex gap-5">
-                            <span class="text-4xl">🚚</span>
-                            <div><h4 class="font-semibold">Fast Delivery</h4><p class="text-gray-600">Same-day delivery in Lusaka</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-semibold tracking-tighter mb-8">About Mobile Fashion Enterprise</h2>
+            <p class="max-w-2xl mx-auto text-lg text-gray-700">
+                Based in Lusaka, we provide quality smartphones, laptops and accessories at affordable prices with excellent customer service.
+            </p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-black py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 bg-cyan-400 rounded-3xl flex items-center justify-center text-4xl text-black">📱</div>
-                    <h1 class="logo-font text-3xl font-bold">Mobile Fashion Enterprise</h1>
-                </div>
-                <div>
-                    <p class="text-white/60">Lusaka, Zambia</p>
-                    <a href="mailto:bandaamos98@gmail.com" class="text-cyan-400 hover:underline block mt-1">bandaamos98@gmail.com</a>
-                    <a href="tel:0979077079" class="text-cyan-400 hover:underline block">+260 979 077 079</a>
-                </div>
-                <div class="text-white/50 text-sm">
-                    © 2026 Mobile Fashion Enterprise. All Rights Reserved.
-                </div>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-cyan-400 rounded-3xl flex items-center justify-center text-3xl text-black">📱</div>
+                <h1 class="logo-font text-3xl font-bold">Mobile Fashion Enterprise</h1>
             </div>
+            <p class="text-white/60">Lusaka, Zambia</p>
+            <a href="mailto:bandaamos98@gmail.com" class="text-cyan-400 hover:underline block mt-2">bandaamos98@gmail.com</a>
+            <a href="tel:0979077079" class="text-cyan-400 hover:underline block">+260 979 077 079</a>
+            <p class="text-white/50 text-sm mt-10">© 2026 Mobile Fashion Enterprise</p>
         </div>
     </footer>
 
-    <!-- FLOATING BUTTONS -->
-    <a href="https://wa.me/260979077079?text=Hello%20Mobile%20Fashion%20Enterprise" 
-       target="_blank" 
-       class="floating-btn bg-green-500 text-white bottom-20 right-6">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-   
-    <a href="tel:0979077079" 
-       class="floating-btn bg-cyan-400 text-black bottom-6 right-6">
-        <i class="fa-solid fa-phone"></i>
-    </a>
+    <!-- FLOATING BUTTONS - Cleaner positioning -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-[10000]">
+        <a href="https://wa.me/260979077079?text=Hello%20Mobile%20Fashion%20Enterprise" 
+           target="_blank" 
+           class="floating-btn bg-green-500 text-white">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:0979077079" 
+           class="floating-btn bg-cyan-400 text-black">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
 
     <script>
         let products = [];
         let cart = [];
+        let currentSlide = 0;
+
+        // Staff Data - Add your real photos here (max 5)
+        const staffMembers = [
+            {
+                name: "Sarah Mwamba",
+                role: "Sales Manager",
+                quote: "We help our customers find the perfect phone that fits their budget and needs.",
+                img: "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/staff1.jpg" // Replace with real photo
+            },
+            {
+                name: "John Banda",
+                role: "Tech Specialist",
+                quote: "Quality and honesty is what we stand for. Every product is carefully selected.",
+                img: "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/staff2.jpg"
+            },
+            {
+                name: "Grace Phiri",
+                role: "Customer Support",
+                quote: "Our goal is to make every customer happy with their purchase.",
+                img: "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/staff3.jpg"
+            }
+            // Add up to 2 more if you want (staff4.jpg, staff5.jpg)
+        ];
 
         async function loadProducts() {
             try {
@@ -240,7 +194,6 @@
                 populateComparisonSelects();
             } catch(e) {
                 console.error(e);
-                document.getElementById('products-grid').innerHTML = `<p class="col-span-full text-center text-red-500 py-12">Failed to load products.</p>`;
             }
         }
 
@@ -255,12 +208,17 @@
                          class="w-full h-56 object-cover"
                          onerror="this.src='https://via.placeholder.com/600x400/1f2937/67e8f9?text=${encodeURIComponent(product.name)}'">
                     <div class="p-6">
-                        <h3 class="font-semibold text-2xl">${product.name}</h3>
-                        <p class="text-white/60 text-sm mt-2 line-clamp-2">${product.description}</p>
-                        <div class="flex justify-between items-center mt-6">
-                            <span class="text-3xl font-bold">ZMW ${product.price.toLocaleString()}</span>
+                        <h3 class="font-semibold text-xl leading-tight">${product.name}</h3>
+                        <p class="text-white/70 text-sm mt-3 line-clamp-2">${product.description}</p>
+                        <div class="mt-6 flex justify-between items-end">
+                            <div>
+                                <span class="block text-xs text-gray-400">Price</span>
+                                <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
+                            </div>
                             <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
-                                    class="bg-cyan-400 hover:bg-cyan-300 text-black px-6 py-3 rounded-2xl font-medium">Add to Cart</button>
+                                    class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                 </div>`;
@@ -284,16 +242,15 @@
         }
 
         function toggleSearch() {
-            const term = prompt("Search products (demo):");
-            if (term) alert("Search coming soon.");
+            alert("Search feature coming soon!");
         }
 
         function populateComparisonSelects() {
             const phones = products.filter(p => p.category === "phone");
             const s1 = document.getElementById('phone1');
             const s2 = document.getElementById('phone2');
-            s1.innerHTML = '<option value="">Select first phone...</option>';
-            s2.innerHTML = '<option value="">Select second phone...</option>';
+            s1.innerHTML = '<option value="">Select Phone 1</option>';
+            s2.innerHTML = '<option value="">Select Phone 2</option>';
             phones.forEach(p => {
                 s1.innerHTML += `<option value="${p.id}">${p.name}</option>`;
                 s2.innerHTML += `<option value="${p.id}">${p.name}</option>`;
@@ -312,21 +269,61 @@
             result.innerHTML = `
                 <div class="bg-zinc-800 p-8 rounded-3xl">
                     <img src="${p1.img}" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h4 class="font-semibold text-xl">${p1.name}</h4>
-                    <p class="text-3xl font-bold text-cyan-400 mt-2">ZMW ${p1.price.toLocaleString()}</p>
+                    <h4 class="font-semibold">${p1.name}</h4>
+                    <p class="text-3xl font-bold text-cyan-400">ZMW ${p1.price.toLocaleString()}</p>
                     <p class="mt-4 text-gray-400">${p1.description}</p>
                 </div>
                 <div class="bg-zinc-800 p-8 rounded-3xl">
                     <img src="${p2.img}" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h4 class="font-semibold text-xl">${p2.name}</h4>
-                    <p class="text-3xl font-bold text-cyan-400 mt-2">ZMW ${p2.price.toLocaleString()}</p>
+                    <h4 class="font-semibold">${p2.name}</h4>
+                    <p class="text-3xl font-bold text-cyan-400">ZMW ${p2.price.toLocaleString()}</p>
                     <p class="mt-4 text-gray-400">${p2.description}</p>
                 </div>`;
             result.classList.remove('hidden');
         }
 
-        // Initialize
-        window.onload = loadProducts;
+        // Staff Slideshow
+        function renderStaffSlideshow() {
+            const container = document.getElementById('staff-slideshow');
+            let html = '';
+
+            staffMembers.forEach((staff, index) => {
+                html += `
+                <div class="staff-slide absolute inset-0 flex flex-col md:flex-row items-center gap-10 px-8 md:px-16 ${index === 0 ? 'opacity-100' : 'opacity-0'}">
+                    <div class="w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
+                        <img src="${staff.img}" 
+                             alt="${staff.name}"
+                             class="w-full h-full object-cover rounded-3xl shadow-xl"
+                             onerror="this.src='https://via.placeholder.com/400x400/1f2937/67e8f9?text=${encodeURIComponent(staff.name)}'">
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-3xl font-semibold">${staff.name}</h3>
+                        <p class="text-cyan-400 text-lg mt-1">${staff.role}</p>
+                        <p class="mt-8 text-lg italic text-white/80 max-w-lg">"${staff.quote}"</p>
+                    </div>
+                </div>`;
+            });
+
+            container.innerHTML = html;
+            startSlideshow();
+        }
+
+        function startSlideshow() {
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.staff-slide');
+
+            setInterval(() => {
+                slides.forEach(slide => slide.classList.add('opacity-0'));
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.remove('opacity-0');
+            }, 6000); // Change every 6 seconds (you can change to 2000 for 2 seconds)
+        }
+
+        // Initialize everything
+        window.onload = () => {
+            loadProducts();
+            renderStaffSlideshow();
+        };
     </script>
 </body>
 </html>
