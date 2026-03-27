@@ -1,105 +1,118 @@
 {
-  "company": {
-    "name": "Brito Mobiles",
-    "slogan": "Genuine Phones, Laptops & Accessories",
-    "location": "Shop No. 75, Buntungwa Street, Opposite Ukupopoka Grocery, Kabwe, Zambia",
-    "phone": "+260 961971085",
-    "whatsapp": "+260 979077079",
-    "email": "bandaamos98@gmail.com",
-    "icon": "https://bandaamos98-create.github.io/brito-mobile/images/icon.png"
-  },
   "products": [
     {
       "id": 1,
-      "name": "Samsung Galaxy A17",
+      "name": "TECHNO CAMON 50 PRO",
       "category": "phone",
-      "price": 3500,
+      "price": 6100,
       "description": "Powerful camera phone with premium design and smooth performance.",
-      "fullDescription": "The Samsung Galaxy A17 features a powerful camera system, premium design, smooth performance, and excellent battery life. Perfect for photography lovers and everyday users.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/csao7.jpg"
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/camon50pro.jpg"
     },
     {
       "id": 2,
-      "name": "Samsung Galaxy A07",
+      "name": "INFINIX HOT 60I",
       "category": "phone",
-      "price": 4500,
+      "price": 2700,
       "description": "Great value smartphone with big battery and fast charging.",
-      "fullDescription": "Samsung Galaxy A07 comes with a massive battery, fast charging support, vibrant display, and decent camera setup. Ideal for students and users who need reliable performance on a budget.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/samsung07.jpg"
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/hot60.jpg"
     },
     {
       "id": 3,
-      "name": "Infinix Hot 50",
+      "name": "TECHNO PHONES",
       "category": "phone",
       "price": 4500,
-      "description": "Reliable smartphone with good camera and performance.",
-      "fullDescription": "Infinix Hot 50 offers excellent battery life, smooth performance, and a beautiful design. Great choice for daily use, social media, and light gaming.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/infinixhot50.jpg"
+      "description": "Reliable Tecno smartphone with good camera and performance.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/techno.jpg"
     },
     {
       "id": 4,
-      "name": "Infinix Note 50",
+      "name": "MUTINIKA MPETA",
       "category": "phone",
-      "price": 5200,
-      "description": "Popular phone with excellent display and software support.",
-      "fullDescription": "Infinix Note 50 features a superb display, long software update support, reliable cameras, and solid build quality.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/infinixnote50.jpg"
+      "price": 250,
+      "description": "Very affordable basic phone for everyday use.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/small.jpg"
     },
     {
       "id": 5,
-      "name": "Bluetooth Speaker Oraimo",
-      "category": "accessory",
-      "price": 250,
-      "description": "High quality portable Bluetooth speaker.",
-      "fullDescription": "Oraimo Bluetooth speaker delivers loud, clear sound with long battery life. Perfect for parties, outdoor use, or home.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/btspeakeroraimo.jpg"
+      "name": "AFFORDABLE SMALL PHONES",
+      "category": "phone",
+      "price": 150,
+      "description": "Budget-friendly small phone perfect for basic needs.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/small1.jpg"
     },
     {
       "id": 6,
-      "name": "Lenovo IdeaPad Laptop",
+      "name": "AFFORDABLE LAPTOP",
       "category": "laptop",
       "price": 5600,
       "description": "Budget laptop suitable for students and basic work.",
-      "fullDescription": "Lenovo IdeaPad offers good performance for everyday tasks like browsing, Microsoft Office, online classes, and light multimedia.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/laptop.jpg"
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop.jpg"
     },
     {
       "id": 7,
-      "name": "Dell Inspiron 14",
+      "name": "Dell XPS 14",
       "category": "laptop",
-      "price": 8500,
-      "description": "Powerful everyday laptop with good battery life.",
-      "fullDescription": "Dell Inspiron 14 is a versatile laptop with excellent build quality, comfortable keyboard, and strong performance for work and study.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/laptop1.jpg"
+      "price": 1699,
+      "description": "Premium OLED touch display, Intel Core Ultra processor.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop1.jpg"
     },
     {
       "id": 8,
-      "name": "Connest Multiple Thing",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "category": "laptop",
+      "price": 1499,
+      "description": "Business laptop with legendary keyboard and durability.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop2.jpg"
+    },
+    {
+      "id": 9,
+      "name": "HP Spectre x360",
+      "category": "laptop",
+      "price": 1399,
+      "description": "2-in-1 convertible laptop with OLED touchscreen.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop3.jpg"
+    },
+    {
+      "id": 10,
+      "name": "ASUS Zenbook 14",
+      "category": "laptop",
+      "price": 1099,
+      "description": "Compact and powerful ultrabook.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop.jpg"
+    },
+    {
+      "id": 11,
+      "name": "ACCESSORIES",
       "category": "accessory",
-      "price": 350,
-      "description": "Charger, earphones, case and screen protector combo.",
-      "fullDescription": "Complete accessory bundle including fast charger, wired earphones, protective case and tempered glass screen protector.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/connecting.jpg"
+      "price": 249,
+      "description": "Phone cases, chargers, earbuds and more accessories in stock.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/other.jpg"
     }
   ],
   "staff": [
     {
+      "name": "Madam Dorcus",
+      "role": "Sales Manager",
+      "quote": "We help our customers find the perfect phone that fits their budget and needs.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/live01.jpg"
+    },
+    {
+      "name": "NIZZA",
+      "role": "Tech Specialist",
+      "quote": "Quality and honesty is what we stand for. Every product is carefully selected.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/live.jpg"
+    },
+    {
+      "name": "THE BIGGER BOSS",
+      "role": "Customer Support",
+      "quote": "Our goal is to make every customer happy with their purchase.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/live6.jpg"
+    },
+    {
       "name": "AMOS BANDA",
       "role": "IT SPECIALIST",
-      "quote": "Lets build your websites.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/profile-pic.jpg"
-    },
-    {
-      "name": "John Banda",
-      "role": "Tech Specialist",
-      "quote": "We help our customers find the perfect phone or laptop that matches their needs and budget.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/staff2.jpg"
-    },
-    {
-      "name": "Trisha Mwanza",
-      "role": "Customer Support",
-      "quote": "Our goal is to make every customer happy with their purchase and provide excellent after-sales support.",
-      "img": "https://bandaamos98-create.github.io/brito-mobile/images/staff3.jpg"
+      "quote": "Demonstration Purposes Only.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/profile-pic.png"
     }
   ]
 }
