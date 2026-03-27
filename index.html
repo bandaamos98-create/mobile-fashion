@@ -11,11 +11,11 @@
        
         .logo-font { font-family: 'Space Grotesk', sans-serif; }
         
-        /* Lighter Modern Background */
+        /* Dark Gradient Theme */
         .hero-bg { 
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); 
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); 
         }
-      
+     
         .product-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -23,22 +23,21 @@
             transform: translateY(-12px);
             box-shadow: 0 30px 60px -15px rgb(34 211 238 / 0.3);
         }
-      
+     
         .staff-slide {
             transition: opacity 1s ease-in-out;
             position: absolute;
             inset: 0;
         }
-        
-        /* Permanent fix for quote text mixing */
+       
+        /* Stronger fix for text mixing on mobile */
         .staff-content {
-            max-width: 420px;
-            width: 100%;
+            max-width: 100%;
         }
         
         .staff-quote {
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.85;
             word-break: break-word;
             hyphens: auto;
         }
@@ -50,7 +49,7 @@
             transform: translateY(-8px);
         }
 
-        /* Floating WhatsApp Button Only */
+        /* WhatsApp Button Only */
         .floating-btn {
             position: fixed;
             z-index: 10000;
@@ -107,7 +106,6 @@
     <!-- HERO -->
     <section id="home" class="hero-bg min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-          
             <!-- Left Side -->
             <div class="space-y-8">
                 <h1 class="text-6xl md:text-7xl font-bold tracking-tighter logo-font leading-none">
@@ -142,40 +140,13 @@
                 <a href="#shop" class="inline-block bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-10 py-4 rounded-3xl text-lg">Explore Our Products</a>
             </div>
 
-            <!-- Right Side: Staff Slideshow (Permanent Fix) -->
+            <!-- Staff Slideshow - Improved for Mobile -->
             <div>
                 <div class="text-center mb-6">
                     <h2 class="text-4xl font-semibold tracking-tight">Meet Our Staff</h2>
                     <p class="text-cyan-400">The friendly team ready to serve you</p>
                 </div>
-                <div id="staff-slideshow" class="relative h-[520px] md:h-[480px] rounded-3xl overflow-hidden shadow-2xl bg-zinc-900"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="py-20 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-5xl font-semibold tracking-tight">Why Choose Us</h2>
-                <p class="text-cyan-400 mt-3 text-xl">We make buying tech simple, honest and affordable</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
-                    <div class="text-5xl mb-6">✅</div>
-                    <h3 class="text-2xl font-semibold mb-3">Genuine Products</h3>
-                    <p class="text-white/70">All phones, laptops and accessories are 100% original with warranty.</p>
-                </div>
-                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
-                    <div class="text-5xl mb-6">💰</div>
-                    <h3 class="text-2xl font-semibold mb-3">Best Prices</h3>
-                    <p class="text-white/70">We offer the most competitive prices in Lusaka and Kabwe.</p>
-                </div>
-                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
-                    <div class="text-5xl mb-6">🛠️</div>
-                    <h3 class="text-2xl font-semibold mb-3">After Sales Support</h3>
-                    <p class="text-white/70">Reliable technical support and repair services for all products.</p>
-                </div>
+                <div id="staff-slideshow" class="relative h-[560px] md:h-[480px] rounded-3xl overflow-hidden shadow-2xl bg-zinc-900"></div>
             </div>
         </div>
     </section>
@@ -212,6 +183,33 @@
             <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
                 <p>Mobile Fashion Enterprise is your number one shop for top brand phones, tablets, and laptops in Zambia.</p>
                 <p class="mt-6">We are committed to providing genuine products at affordable prices with excellent customer service. Our stores serve customers in Lusaka and Kabwe with fast delivery and reliable support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US - Moved to Bottom -->
+    <section class="py-20 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-semibold tracking-tight">Why Choose Us</h2>
+                <p class="text-cyan-400 mt-3 text-xl">We make buying tech simple, honest and affordable</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                    <div class="text-5xl mb-6">✅</div>
+                    <h3 class="text-2xl font-semibold mb-3">Genuine Products</h3>
+                    <p class="text-white/70">All phones, laptops and accessories are 100% original with warranty.</p>
+                </div>
+                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                    <div class="text-5xl mb-6">💰</div>
+                    <h3 class="text-2xl font-semibold mb-3">Best Prices</h3>
+                    <p class="text-white/70">We offer the most competitive prices in Lusaka and Kabwe.</p>
+                </div>
+                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                    <div class="text-5xl mb-6">🛠️</div>
+                    <h3 class="text-2xl font-semibold mb-3">After Sales Support</h3>
+                    <p class="text-white/70">Reliable technical support and repair services for all products.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -272,6 +270,8 @@
                 console.error("Error loading data:", e);
             }
         }
+
+        // ... (All your other functions remain the same: renderProducts, addToCart, etc.)
 
         function renderProducts() {
             const grid = document.getElementById('products-grid');
@@ -402,28 +402,28 @@
             result.classList.remove('hidden');
         }
 
-        // Permanent Fix for Staff Slideshow - Text Mixing Solved
+        // Final Fixed Staff Slideshow for Mobile
         function renderStaffSlideshow() {
             const container = document.getElementById('staff-slideshow');
             let html = '';
             
             staff.forEach((member, index) => {
                 html += `
-                <div class="staff-slide flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-12 px-6 md:px-12 h-full ${index === 0 ? 'opacity-100' : 'opacity-0'}">
+                <div class="staff-slide flex flex-col items-center gap-6 md:gap-10 px-6 md:px-12 h-full ${index === 0 ? 'opacity-100' : 'opacity-0'}">
                     
-                    <!-- Image -->
-                    <div class="w-60 h-60 md:w-72 md:h-72 flex-shrink-0">
+                    <!-- Image - Smaller on mobile -->
+                    <div class="w-52 h-52 md:w-72 md:h-72 flex-shrink-0">
                         <img src="${member.img}" alt="${member.name}"
                              class="w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10"
                              onerror="this.src='https://via.placeholder.com/400x400/1f2937/67e8f9?text=${encodeURIComponent(member.name)}'">
                     </div>
 
-                    <!-- Content with fixed width -->
-                    <div class="staff-content text-center md:text-left">
+                    <!-- Text Content -->
+                    <div class="staff-content text-center px-4">
                         <h3 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">${member.name}</h3>
-                        <p class="text-cyan-400 text-xl mt-2 font-medium">${member.role}</p>
+                        <p class="text-cyan-400 text-lg md:text-xl mt-2">${member.role}</p>
                         
-                        <div class="mt-10 pt-8 border-t border-white/10">
+                        <div class="mt-8 pt-6 border-t border-white/10">
                             <p class="staff-quote italic text-white/80">
                                 "${member.quote}"
                             </p>
