@@ -11,8 +11,14 @@
         .logo-font { font-family: 'Space Grotesk', sans-serif; }
         .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
         
-        .product-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .product-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px -15px rgb(34 211 238 / 0.3); }
+        .product-card { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            height: 420px; /* Fixed height for consistency */
+        }
+        .product-card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: 0 30px 60px -15px rgb(34 211 238 / 0.3); 
+        }
         
         .staff-slide { 
             transition: opacity 1s ease-in-out; 
@@ -31,14 +37,6 @@
             justify-content: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             font-size: 28px;
-        }
-        
-        .search-modal {
-            animation: modalPop 0.3s ease-out;
-        }
-        @keyframes modalPop {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
@@ -59,7 +57,7 @@
                 <a href="#about" class="hover:text-cyan-400">About Us</a>
             </div>
             <div class="flex items-center gap-6">
-                <button onclick="toggleSearch()" class="text-2xl hover:text-cyan-400 transition-colors"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button onclick="toggleSearch()" class="text-2xl hover:text-cyan-400"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <button onclick="showCart()" class="relative text-2xl hover:text-cyan-400">
                     <i class="fa-solid fa-shopping-cart"></i>
                     <span id="cart-count" class="absolute -top-1 -right-1 bg-cyan-400 text-black text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
@@ -72,7 +70,6 @@
     <!-- HERO - Split Layout -->
     <section id="home" class="hero-bg min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-            
             <!-- LEFT: Company Focus -->
             <div class="space-y-8">
                 <h1 class="text-6xl md:text-7xl font-bold tracking-tighter logo-font leading-none">
@@ -93,21 +90,21 @@
                         <div class="text-4xl">🛍️</div>
                         <div>
                             <h4 class="font-semibold text-lg">Quality &amp; Affordability</h4>
-                            <p class="text-white/70">Genuine products with excellent customer service and fast delivery.</p>
+                            <p class="text-white/70">Genuine products with excellent customer service.</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <div class="text-4xl">📍</div>
                         <div>
                             <h4 class="font-semibold text-lg">Lusaka &amp; Kabwe</h4>
-                            <p class="text-white/70">Convenient locations with reliable after-sales support.</p>
+                            <p class="text-white/70">Fast delivery and reliable support.</p>
                         </div>
                     </div>
                 </div>
                 <a href="#shop" class="inline-block bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-10 py-4 rounded-3xl text-lg">Explore Our Products</a>
             </div>
 
-            <!-- RIGHT: Meet Our Staff Slideshow -->
+            <!-- RIGHT: Meet Our Staff -->
             <div>
                 <div class="text-center mb-6">
                     <h2 class="text-4xl font-semibold tracking-tight">Meet Our Staff</h2>
@@ -126,48 +123,6 @@
         </div>
     </section>
 
-    <!-- COMPARE SECTION -->
-    <section id="compare" class="py-20 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-semibold tracking-tight text-white mb-3 text-center">Compare Phones</h2>
-            <p class="text-cyan-400 text-center mb-12">Make the right choice</p>
-            <div class="bg-black rounded-3xl p-10 max-w-3xl mx-auto">
-                <div class="grid md:grid-cols-12 gap-8 items-end">
-                    <div class="md:col-span-5"><select id="phone1" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select></div>
-                    <div class="md:col-span-2 text-center text-5xl font-bold text-cyan-400 py-4">VS</div>
-                    <div class="md:col-span-5"><select id="phone2" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select></div>
-                </div>
-                <button onclick="performComparison()" class="mt-10 w-full bg-cyan-400 hover:bg-cyan-300 text-black py-6 rounded-3xl text-xl font-semibold">Compare Now</button>
-                <div id="comparison-result" class="hidden mt-12 grid grid-cols-2 gap-8"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT US -->
-    <section id="about" class="py-20 bg-white text-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-semibold tracking-tighter mb-8 text-center">About Mobile Fashion Enterprise</h2>
-            <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
-                <p>Mobile Fashion Enterprise is your number one shop for top brand phones, tablets, and laptops in Zambia.</p>
-                <p class="mt-6">We are committed to providing genuine products at affordable prices with excellent customer service. Our stores serve customers in Lusaka and Kabwe with fast delivery and reliable support.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-black py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-3 mb-6">
-                <div class="w-10 h-10 bg-cyan-400 rounded-3xl flex items-center justify-center text-3xl text-black">📱</div>
-                <h1 class="logo-font text-3xl font-bold">Mobile Fashion Enterprise</h1>
-            </div>
-            <p class="text-white/60">Lusaka &amp; Kabwe, Zambia</p>
-            <a href="mailto:bandaamos98@gmail.com" class="text-cyan-400 hover:underline block mt-2">bandaamos98@gmail.com</a>
-            <a href="tel:0979077079" class="text-cyan-400 hover:underline block">+260 979 077 079</a>
-            <p class="text-white/50 text-sm mt-10">© 2026 Mobile Fashion Enterprise</p>
-        </div>
-    </footer>
-
     <!-- FLOATING BUTTONS -->
     <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-[10000]">
         <a href="https://wa.me/260979077079?text=Hello%20Mobile%20Fashion%20Enterprise" target="_blank" class="floating-btn bg-green-500 text-white">
@@ -176,21 +131,6 @@
         <a href="tel:0979077079" class="floating-btn bg-cyan-400 text-black">
             <i class="fa-solid fa-phone"></i>
         </a>
-    </div>
-
-    <!-- SEARCH MODAL -->
-    <div id="search-modal" class="hidden fixed inset-0 bg-black/80 flex items-start justify-center pt-32 z-[20000]">
-        <div class="bg-zinc-900 w-full max-w-xl mx-4 rounded-3xl p-8">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-semibold">Search Products</h3>
-                <button onclick="toggleSearch()" class="text-3xl text-white/60 hover:text-white">×</button>
-            </div>
-            <input id="search-input" type="text" 
-                   class="w-full bg-zinc-800 text-white rounded-3xl px-6 py-5 text-lg outline-none"
-                   placeholder="Search phones, laptops, accessories..." 
-                   onkeyup="if(event.key === 'Enter') handleSearch()">
-            <p class="text-sm text-white/50 mt-4">Try: "Camon", "Infinix", "Laptop"</p>
-        </div>
     </div>
 
     <script>
@@ -205,7 +145,6 @@
                 products = data.products || [];
                 staff = data.staff || [];
                 renderProducts();
-                populateComparisonSelects();
                 renderStaffSlideshow();
             } catch(e) {
                 console.error(e);
@@ -215,21 +154,23 @@
         function renderProducts() {
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
+
             products.forEach(product => {
                 const card = `
-                <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
-                    <img src="${product.img}" alt="${product.name}" class="w-full h-56 object-cover"
+                <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 flex flex-col">
+                    <img src="${product.img}" alt="${product.name}" 
+                         class="w-full h-56 object-cover flex-shrink-0"
                          onerror="this.src='https://via.placeholder.com/600x400/1f2937/67e8f9?text=${encodeURIComponent(product.name)}'">
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl leading-tight text-white">${product.name}</h3>
-                        <p class="text-white/70 text-sm mt-3 line-clamp-2">${product.description}</p>
-                        <div class="mt-6 flex justify-between items-end">
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-semibold text-xl leading-tight text-white mb-3">${product.name}</h3>
+                        <p class="text-white/70 text-sm line-clamp-3 flex-1">${product.description}</p>
+                        <div class="mt-auto pt-6 flex justify-between items-end">
                             <div>
-                                <span class="block text-xs text-gray-400">Price</span>
-                                <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
+                                <span class="text-xs text-gray-400">Price</span>
+                                <div class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</div>
                             </div>
                             <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
-                                    class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
+                                    class="bg-cyan-400 hover:bg-cyan-300 text-black px-6 py-3 rounded-2xl font-medium text-sm">
                                 Add to Cart
                             </button>
                         </div>
@@ -255,86 +196,7 @@
         }
 
         function toggleSearch() {
-            const modal = document.getElementById('search-modal');
-            modal.classList.toggle('hidden');
-            if (!modal.classList.contains('hidden')) {
-                setTimeout(() => document.getElementById('search-input').focus(), 100);
-            }
-        }
-
-        function handleSearch() {
-            const term = document.getElementById('search-input').value.toLowerCase().trim();
-            toggleSearch();
-            if (!term) return;
-
-            const filtered = products.filter(p => 
-                p.name.toLowerCase().includes(term) || 
-                p.description.toLowerCase().includes(term)
-            );
-
-            const grid = document.getElementById('products-grid');
-            if (filtered.length === 0) {
-                grid.innerHTML = `<p class="col-span-full text-center py-12 text-gray-400">No products found for "${term}"</p>`;
-            } else {
-                // Temporarily render filtered results
-                grid.innerHTML = '';
-                filtered.forEach(product => {
-                    const card = `
-                    <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
-                        <img src="${product.img}" alt="${product.name}" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-semibold text-xl leading-tight text-white">${product.name}</h3>
-                            <p class="text-white/70 text-sm mt-3 line-clamp-2">${product.description}</p>
-                            <div class="mt-6 flex justify-between items-end">
-                                <div>
-                                    <span class="block text-xs text-gray-400">Price</span>
-                                    <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
-                                </div>
-                                <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
-                                        class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>`;
-                    grid.innerHTML += card;
-                });
-            }
-        }
-
-        function populateComparisonSelects() {
-            const phones = products.filter(p => p.category === "phone");
-            const s1 = document.getElementById('phone1');
-            const s2 = document.getElementById('phone2');
-            s1.innerHTML = '<option value="">Select Phone 1</option>';
-            s2.innerHTML = '<option value="">Select Phone 2</option>';
-            phones.forEach(p => {
-                s1.innerHTML += `<option value="${p.id}">${p.name}</option>`;
-                s2.innerHTML += `<option value="${p.id}">${p.name}</option>`;
-            });
-        }
-
-        function performComparison() {
-            const id1 = parseInt(document.getElementById('phone1').value);
-            const id2 = parseInt(document.getElementById('phone2').value);
-            if (!id1 || !id2 || id1 === id2) return alert("Please select two different phones.");
-            const p1 = products.find(p => p.id === id1);
-            const p2 = products.find(p => p.id === id2);
-            const result = document.getElementById('comparison-result');
-            result.innerHTML = `
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <img src="${p1.img}" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h4 class="font-semibold">${p1.name}</h4>
-                    <p class="text-3xl font-bold text-cyan-400">ZMW ${p1.price.toLocaleString()}</p>
-                    <p class="mt-4 text-gray-400">${p1.description}</p>
-                </div>
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <img src="${p2.img}" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h4 class="font-semibold">${p2.name}</h4>
-                    <p class="text-3xl font-bold text-cyan-400">ZMW ${p2.price.toLocaleString()}</p>
-                    <p class="mt-4 text-gray-400">${p2.description}</p>
-                </div>`;
-            result.classList.remove('hidden');
+            alert("Search feature coming soon!");
         }
 
         // Staff Slideshow
@@ -352,7 +214,7 @@
                     <div class="flex-1 text-center md:text-left">
                         <h3 class="text-3xl font-semibold text-white">${member.name}</h3>
                         <p class="text-cyan-400 text-lg mt-1">${member.role}</p>
-                        <p class="mt-8 text-lg italic text-white/80 max-w-lg">"${member.quote}"</p>
+                        <p class="mt-8 text-lg italic text-white/80">"${member.quote}"</p>
                     </div>
                 </div>`;
             });
@@ -369,10 +231,9 @@
                 slides.forEach(s => s.classList.add('opacity-0'));
                 index = (index + 1) % slides.length;
                 slides[index].classList.remove('opacity-0');
-            }, 5000); // 5 seconds per slide
+            }, 5000);
         }
 
-        // Initialize
         window.onload = loadData;
     </script>
 </body>
