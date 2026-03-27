@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Fashion Enterprise | Phones, Laptops & Accessories</title>
+    <title>Brito Mobiles | Genuine Phones, Laptops & Accessories</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -11,7 +11,7 @@
         
         .logo-font { font-family: 'Space Grotesk', sans-serif; }
         .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
-
+       
         .product-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -19,8 +19,7 @@
             transform: translateY(-12px);
             box-shadow: 0 25px 50px -12px rgb(34 211 238 / 0.3);
         }
-
-        /* Staff Slideshow Fix */
+       
         .staff-slide {
             position: absolute;
             inset: 0;
@@ -37,31 +36,23 @@
             opacity: 1;
             visibility: visible;
         }
-
-        .staff-quote {
-            line-height: 1.7;
-            max-width: 420px;
-            text-align: center;
-            font-size: 1.05rem;
-        }
-
-        /* Similar Products Scroll */
+       
         .similar-scroll {
             display: flex;
             gap: 1.25rem;
             overflow-x: auto;
             padding-bottom: 1rem;
             scrollbar-width: thin;
-            scrollbar-color: #22d3ee #27272a;
+            scrollbar-color: #10b981 #27272a;
         }
         .similar-scroll::-webkit-scrollbar {
             height: 8px;
         }
         .similar-scroll::-webkit-scrollbar-thumb {
-            background: #22d3ee;
+            background: #10b981;
             border-radius: 20px;
         }
-
+       
         .floating-btn {
             position: fixed;
             bottom: 24px;
@@ -77,16 +68,9 @@
             font-size: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             z-index: 10000;
+            transition: transform 0.3s ease;
         }
         .floating-btn:hover { transform: scale(1.15); }
-
-        .modal {
-            animation: modalPop 0.3s ease-out;
-        }
-        @keyframes modalPop {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
@@ -95,21 +79,20 @@
     <nav class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-11 h-11 bg-cyan-400 rounded-3xl flex items-center justify-center text-4xl text-black">📱</div>
-                <h1 class="logo-font text-3xl font-bold tracking-tighter">Mobile Fashion</h1>
-                <span class="text-cyan-400 text-xs font-medium tracking-widest">ENTERPRISE</span>
+                <div class="w-11 h-11 bg-emerald-400 rounded-3xl flex items-center justify-center text-4xl text-black">📱</div>
+                <h1 class="logo-font text-3xl font-bold tracking-tighter">Brito Mobiles</h1>
             </div>
             <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#home" class="hover:text-cyan-400">Home</a>
-                <a href="#shop" class="hover:text-cyan-400">Shop</a>
-                <a href="#compare" class="hover:text-cyan-400">Compare</a>
-                <a href="#about" class="hover:text-cyan-400">About Us</a>
+                <a href="#home" class="hover:text-emerald-400">Home</a>
+                <a href="#shop" class="hover:text-emerald-400">Shop</a>
+                <a href="#compare" class="hover:text-emerald-400">Compare</a>
+                <a href="#about" class="hover:text-emerald-400">About Us</a>
             </div>
             <div class="flex items-center gap-6">
-                <button onclick="toggleSearch()" class="text-2xl hover:text-cyan-400"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button onclick="showCart()" class="relative text-2xl hover:text-cyan-400">
+                <button onclick="toggleSearch()" class="text-2xl hover:text-emerald-400"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button onclick="showCart()" class="relative text-2xl hover:text-emerald-400">
                     <i class="fa-solid fa-shopping-cart"></i>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-cyan-400 text-black text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-emerald-400 text-black text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
                 </button>
                 <a href="mailto:bandaamos98@gmail.com" class="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium">Email Us</a>
             </div>
@@ -121,21 +104,19 @@
         <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-8">
                 <h1 class="text-6xl md:text-7xl font-bold tracking-tighter logo-font leading-none">
-                    Your Trusted Tech Partner<br>in Zambia
+                    Your Trusted Mobile Partner<br>in Kabwe
                 </h1>
                 <p class="text-xl text-white/80">
-                    Mobile Fashion Enterprise brings top brand smartphones, tablets, laptops, and accessories to customers in Lusaka and Kabwe.
+                    Genuine phones, laptops & accessories at the best prices in Kabwe, Zambia.
                 </p>
-                <a href="#shop" class="inline-block bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-10 py-4 rounded-3xl text-lg">
-                    Explore Our Products
+                <a href="#shop" class="inline-block bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-10 py-4 rounded-3xl text-lg">
+                    Shop Now
                 </a>
             </div>
-
-            <!-- Staff Slideshow -->
             <div>
                 <div class="text-center mb-6">
                     <h2 class="text-4xl font-semibold tracking-tight">Meet Our Staff</h2>
-                    <p class="text-cyan-400">The friendly team ready to serve you</p>
+                    <p class="text-emerald-400">The friendly team ready to serve you</p>
                 </div>
                 <div id="staff-slideshow" class="relative h-[580px] md:h-[520px] bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl"></div>
             </div>
@@ -152,24 +133,18 @@
 
     <!-- PRODUCT DETAIL MODAL -->
     <div id="product-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[20000] p-4">
-        <div class="bg-zinc-900 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-hidden modal">
+        <div class="bg-zinc-900 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-hidden">
             <div class="flex flex-col lg:flex-row">
-                <!-- Left: Main Product -->
                 <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col">
                     <button onclick="closeModal()" class="absolute top-6 right-6 text-4xl text-white/70 hover:text-white z-10">×</button>
-                    
                     <img id="modal-image" class="w-full h-80 object-cover rounded-2xl mb-8" alt="">
-                    
                     <h2 id="modal-name" class="text-4xl font-bold text-white"></h2>
-                    <p id="modal-price" class="text-3xl font-bold text-cyan-400 mt-2"></p>
-                    
+                    <p id="modal-price" class="text-3xl font-bold text-emerald-400 mt-2"></p>
                     <div class="mt-10">
                         <h3 class="text-xl font-semibold mb-4">Full Description</h3>
                         <p id="modal-full-desc" class="text-white/80 leading-relaxed text-lg"></p>
                     </div>
                 </div>
-
-                <!-- Right: Similar Products -->
                 <div class="lg:w-1/2 bg-zinc-800 p-8 lg:p-12">
                     <h3 class="text-2xl font-semibold mb-6 text-white">Similar Products</h3>
                     <div id="similar-products" class="similar-scroll"></div>
@@ -182,14 +157,21 @@
     <section id="compare" class="py-20 bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-5xl font-semibold tracking-tight text-white mb-3 text-center">Compare Phones</h2>
-            <p class="text-cyan-400 text-center mb-12">Make the right choice</p>
+            <p class="text-emerald-400 text-center mb-12">Make the right choice</p>
             <div class="bg-black rounded-3xl p-10 max-w-3xl mx-auto">
                 <div class="grid md:grid-cols-12 gap-8 items-end">
-                    <div class="md:col-span-5"><select id="phone1" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select></div>
-                    <div class="md:col-span-2 text-center text-5xl font-bold text-cyan-400 py-4">VS</div>
-                    <div class="md:col-span-5"><select id="phone2" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select></div>
+                    <div class="md:col-span-5">
+                        <select id="phone1" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select>
+                    </div>
+                    <div class="md:col-span-2 text-center text-5xl font-bold text-emerald-400 py-4">VS</div>
+                    <div class="md:col-span-5">
+                        <select id="phone2" class="w-full bg-zinc-800 text-white rounded-3xl px-8 py-6 text-lg"></select>
+                    </div>
                 </div>
-                <button onclick="performComparison()" class="mt-10 w-full bg-cyan-400 hover:bg-cyan-300 text-black py-6 rounded-3xl text-xl font-semibold">Compare Now</button>
+                <button onclick="performComparison()" 
+                        class="mt-10 w-full bg-emerald-400 hover:bg-emerald-300 text-black py-6 rounded-3xl text-xl font-semibold">
+                    Compare Now
+                </button>
                 <div id="comparison-result" class="hidden mt-12 grid grid-cols-2 gap-8"></div>
             </div>
         </div>
@@ -198,10 +180,10 @@
     <!-- ABOUT US -->
     <section id="about" class="py-20 bg-white text-black">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-semibold tracking-tighter mb-8 text-center">About Mobile Fashion Enterprise</h2>
+            <h2 class="text-5xl font-semibold tracking-tighter mb-8 text-center">About Brito Mobiles</h2>
             <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
-                <p>Mobile Fashion Enterprise is your number one shop for top brand phones, tablets, and laptops in Zambia.</p>
-                <p class="mt-6">We are committed to providing genuine products at affordable prices with excellent customer service. Our stores serve customers in Lusaka and Kabwe with fast delivery and reliable support.</p>
+                <p>Brito Mobiles is your trusted supplier of genuine phones, laptops, and accessories in Kabwe, Zambia.</p>
+                <p class="mt-6">Located at Shop No. 75, Buntungwa Street, opposite Ukupopoka Grocery, we offer quality products at affordable prices with excellent customer service.</p>
             </div>
         </div>
     </section>
@@ -210,24 +192,24 @@
     <section class="py-20 bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-5xl font-semibold tracking-tight">Why Choose Us</h2>
-                <p class="text-cyan-400 mt-3 text-xl">We make buying tech simple, honest and affordable</p>
+                <h2 class="text-5xl font-semibold tracking-tight">Why Choose Brito Mobiles</h2>
+                <p class="text-emerald-400 mt-3 text-xl">Genuine products • Best prices • Reliable service</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                <div class="bg-zinc-800 p-8 rounded-3xl border border-white/10">
                     <div class="text-5xl mb-6">✅</div>
                     <h3 class="text-2xl font-semibold mb-3">Genuine Products</h3>
-                    <p class="text-white/70">All phones, laptops and accessories are 100% original with warranty.</p>
+                    <p class="text-white/70">All devices and accessories are 100% original with warranty.</p>
                 </div>
-                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                <div class="bg-zinc-800 p-8 rounded-3xl border border-white/10">
                     <div class="text-5xl mb-6">💰</div>
-                    <h3 class="text-2xl font-semibold mb-3">Best Prices</h3>
-                    <p class="text-white/70">We offer the most competitive prices in Lusaka and Kabwe.</p>
+                    <h3 class="text-2xl font-semibold mb-3">Competitive Prices</h3>
+                    <p class="text-white/70">Best prices in Kabwe with flexible payment options.</p>
                 </div>
-                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                <div class="bg-zinc-800 p-8 rounded-3xl border border-white/10">
                     <div class="text-5xl mb-6">🛠️</div>
-                    <h3 class="text-2xl font-semibold mb-3">After Sales Support</h3>
-                    <p class="text-white/70">Reliable technical support and repair services for all products.</p>
+                    <h3 class="text-2xl font-semibold mb-3">Excellent Support</h3>
+                    <p class="text-white/70">After-sales support and reliable customer service.</p>
                 </div>
             </div>
         </div>
@@ -237,18 +219,24 @@
     <footer class="bg-black py-16">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center items-center gap-3 mb-6">
-                <div class="w-10 h-10 bg-cyan-400 rounded-3xl flex items-center justify-center text-3xl text-black">📱</div>
-                <h1 class="logo-font text-3xl font-bold">Mobile Fashion Enterprise</h1>
+                <div class="w-10 h-10 bg-emerald-400 rounded-3xl flex items-center justify-center text-3xl text-black">📱</div>
+                <h1 class="logo-font text-3xl font-bold">Brito Mobiles</h1>
             </div>
-            <p class="text-white/60">Lusaka &amp; Kabwe, Zambia</p>
-            <a href="mailto:bandaamos98@gmail.com" class="text-cyan-400 hover:underline block mt-2">bandaamos98@gmail.com</a>
-            <a href="tel:0979077079" class="text-cyan-400 hover:underline block">+260 979 077 079</a>
-            <p class="text-white/50 text-sm mt-10">© 2026 Mobile Fashion Enterprise</p>
+            <p class="text-white/60">Shop No. 75, Buntungwa Street, Kabwe, Zambia</p>
+            <p class="text-white/60">Opposite Ukupopoka Grocery</p>
+           
+            <div class="mt-6 space-y-1">
+                <a href="tel:+260961971085" class="text-emerald-400 hover:underline block">📞 +260 961 971 085</a>
+                <a href="https://wa.me/260979077079" class="text-emerald-400 hover:underline block">💬 WhatsApp: +260 979 077 079</a>
+                <a href="mailto:bandaamos98@gmail.com" class="text-emerald-400 hover:underline block">✉️ bandaamos98@gmail.com</a>
+            </div>
+           
+            <p class="text-white/50 text-sm mt-10">© 2026 Brito Mobiles - All Rights Reserved</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/260979077079?text=Hello%20Mobile%20Fashion%20Enterprise%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/260979077079?text=Hello%20Brito%20Mobiles%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" 
        target="_blank" class="floating-btn">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -258,166 +246,190 @@
         let staff = [];
         let cart = [];
 
-        async function loadData() {
+        // Load data from JSON file
+        async function loadProducts() {
             try {
-                const res = await fetch('https://bandaamos98-create.github.io/mobile-fashion/products.json');
-                const data = await res.json();
+                const response = await fetch('data.json');
+                const data = await response.json();
+
                 products = data.products || [];
                 staff = data.staff || [];
+
+                console.log(`${products.length} products loaded successfully`);
+
                 renderProducts();
                 populateComparisonSelects();
                 renderStaffSlideshow();
-            } catch(e) {
-                console.error(e);
+            } catch (e) {
+                console.error("Error loading data:", e);
+                alert("Failed to load products. Please check console for details.");
             }
         }
 
-        function renderProducts(filtered = products) {
-            const grid = document.getElementById('products-grid');
-            grid.innerHTML = '';
-            filtered.forEach(product => {
-                const card = `
-                <div onclick="showProduct(${product.id})" class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 cursor-pointer">
+        function renderProducts() {
+            const container = document.getElementById('products-grid');
+            container.innerHTML = '';
+
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = `product-card bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer`;
+                card.innerHTML = `
                     <img src="${product.img}" alt="${product.name}" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl text-white">${product.name}</h3>
-                        <p class="text-white/70 text-sm mt-3 line-clamp-2">${product.description}</p>
-                        <div class="mt-6 flex justify-between items-end">
-                            <div>
-                                <span class="block text-xs text-gray-400">Price</span>
-                                <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
-                            </div>
-                            <button onclick="event.stopImmediatePropagation(); addToCart(${product.id});" 
-                                    class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-xl mb-1">${product.name}</h3>
+                        <p class="text-emerald-600 font-medium text-lg">K${product.price.toLocaleString()}</p>
+                        <p class="text-zinc-600 text-sm mt-2 line-clamp-2">${product.description}</p>
+                        
+                        <div class="mt-6 flex gap-3">
+                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
+                                    class="flex-1 bg-black text-white py-3 rounded-2xl text-sm font-medium hover:bg-zinc-800">
                                 Add to Cart
+                            </button>
+                            <button onclick="showProductDetail(${product.id}); event.stopImmediatePropagation()" 
+                                    class="flex-1 border border-black py-3 rounded-2xl text-sm font-medium hover:bg-zinc-100">
+                                View
                             </button>
                         </div>
                     </div>
-                </div>`;
-                grid.innerHTML += card;
+                `;
+                card.addEventListener('click', () => showProductDetail(product.id));
+                container.appendChild(card);
             });
         }
 
-        function showProduct(id) {
+        function showProductDetail(id) {
             const product = products.find(p => p.id === id);
             if (!product) return;
 
             document.getElementById('modal-image').src = product.img;
             document.getElementById('modal-name').textContent = product.name;
-            document.getElementById('modal-price').textContent = `ZMW ${product.price.toLocaleString()}`;
-            document.getElementById('modal-full-desc').textContent = 
-                product.fullDescription || product.description + ". This is a high-quality product designed for excellent performance and long-lasting reliability.";
+            document.getElementById('modal-price').textContent = `K${product.price.toLocaleString()}`;
+            document.getElementById('modal-full-desc').textContent = product.fullDescription;
 
-            const similar = products
-                .filter(p => p.category === product.category && p.id !== product.id)
-                .slice(0, 10);
+            const similarContainer = document.getElementById('similar-products');
+            similarContainer.innerHTML = '';
 
-            let html = '';
-            similar.forEach(p => {
-                html += `
-                <div onclick="showProduct(${p.id});" class="min-w-[260px] bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-cyan-400 transition-all">
-                    <img src="${p.img}" class="w-full h-40 object-cover">
-                    <div class="p-4">
-                        <h4 class="font-medium text-white line-clamp-1">${p.name}</h4>
-                        <p class="text-white/70 text-sm line-clamp-2 mt-1">${p.description}</p>
-                        <p class="text-cyan-400 font-bold mt-3">ZMW ${p.price.toLocaleString()}</p>
+            const similar = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+
+            similar.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "min-w-[180px] bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer";
+                div.innerHTML = `
+                    <img src="${item.img}" class="w-full h-40 object-cover">
+                    <div class="p-3">
+                        <p class="font-medium text-sm">${item.name}</p>
+                        <p class="text-emerald-400 text-sm">K${item.price}</p>
                     </div>
-                </div>`;
+                `;
+                div.onclick = () => {
+                    closeModal();
+                    setTimeout(() => showProductDetail(item.id), 300);
+                };
+                similarContainer.appendChild(div);
             });
 
-            document.getElementById('similar-products').innerHTML = html || '<p class="text-white/50">No similar products available.</p>';
             document.getElementById('product-modal').classList.remove('hidden');
+            document.getElementById('product-modal').classList.add('flex');
         }
 
         function closeModal() {
-            document.getElementById('product-modal').classList.add('hidden');
+            const modal = document.getElementById('product-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
 
         function addToCart(id) {
             const product = products.find(p => p.id === id);
-            if (product) {
-                cart.push(product);
-                document.getElementById('cart-count').textContent = cart.length;
-                alert(`${product.name} added to cart!`);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.quantity = (existing.quantity || 1) + 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
             }
+
+            updateCartCount();
+            alert(`${product.name} added to cart!`);
         }
 
-        function showCart() {
-            if (cart.length === 0) return alert("Your cart is empty.");
-            let total = cart.reduce((sum, item) => sum + item.price, 0);
-            alert(`Cart Total: ZMW ${total.toLocaleString()}`);
-        }
-
-        function toggleSearch() {
-            alert("Search is active. Click the magnifying glass and type then press Enter.");
+        function updateCartCount() {
+            const countEl = document.getElementById('cart-count');
+            const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            countEl.textContent = totalItems;
         }
 
         function populateComparisonSelects() {
-            const phones = products.filter(p => p.category === "phone");
-            const s1 = document.getElementById('phone1');
-            const s2 = document.getElementById('phone2');
-            s1.innerHTML = '<option value="">Select Phone 1</option>';
-            s2.innerHTML = '<option value="">Select Phone 2</option>';
-            phones.forEach(p => {
-                s1.innerHTML += `<option value="${p.id}">${p.name}</option>`;
-                s2.innerHTML += `<option value="${p.id}">${p.name}</option>`;
+            const select1 = document.getElementById('phone1');
+            const select2 = document.getElementById('phone2');
+
+            const phones = products.filter(p => p.category === 'phone');
+
+            select1.innerHTML = '<option value="">Select Phone 1</option>';
+            select2.innerHTML = '<option value="">Select Phone 2</option>';
+
+            phones.forEach(phone => {
+                const opt1 = new Option(phone.name, phone.id);
+                const opt2 = new Option(phone.name, phone.id);
+                select1.add(opt1);
+                select2.add(opt2);
             });
         }
 
         function performComparison() {
             const id1 = parseInt(document.getElementById('phone1').value);
             const id2 = parseInt(document.getElementById('phone2').value);
-            if (!id1 || !id2 || id1 === id2) return alert("Please select two different phones.");
-            
-            const p1 = products.find(p => p.id === id1);
-            const p2 = products.find(p => p.id === id2);
-            
-            const result = document.getElementById('comparison-result');
-            result.innerHTML = `
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <img src="${p1.img}" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h4 class="font-semibold">${p1.name}</h4>
-                    <p class="text-3xl font-bold text-cyan-400">ZMW ${p1.price.toLocaleString()}</p>
-                </div>
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <img src="${p2.img}" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h4 class="font-semibold">${p2.name}</h4>
-                    <p class="text-3xl font-bold text-cyan-400">ZMW ${p2.price.toLocaleString()}</p>
-                </div>`;
-            result.classList.remove('hidden');
+
+            if (!id1 || !id2) {
+                alert("Please select two phones to compare");
+                return;
+            }
+            alert(`Comparison feature coming soon!\nPhone ${id1} vs Phone ${id2}`);
         }
 
-        // Staff Slideshow - Fixed Image Display
         function renderStaffSlideshow() {
             const container = document.getElementById('staff-slideshow');
-            let html = '';
-            staff.forEach((m, i) => {
-                html += `
-                <div class="staff-slide ${i === 0 ? 'active' : ''}">
-                    <img src="${m.img}" 
-                         class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl mb-8 shadow-2xl border border-white/10"
-                         onerror="this.src='https://via.placeholder.com/400x400/1f2937/67e8f9?text=${encodeURIComponent(m.name)}'">
-                    <h3 class="text-3xl md:text-4xl font-semibold text-white">${m.name}</h3>
-                    <p class="text-cyan-400 text-xl mt-2">${m.role}</p>
-                    <p class="staff-quote italic text-white/80 mt-8">"${m.quote}"</p>
-                </div>`;
+            container.innerHTML = '';
+
+            staff.forEach((member, index) => {
+                const slide = document.createElement('div');
+                slide.className = `staff-slide ${index === 0 ? 'active' : ''}`;
+                slide.innerHTML = `
+                    <img src="${member.img}" alt="${member.name}" class="w-48 h-48 object-cover rounded-full border-4 border-emerald-400 mb-6">
+                    <h3 class="text-3xl font-bold text-white">${member.name}</h3>
+                    <p class="text-emerald-400 text-xl mt-1">${member.role}</p>
+                    <p class="text-white/70 mt-6 text-center max-w-md">"${member.quote}"</p>
+                `;
+                container.appendChild(slide);
             });
-            container.innerHTML = html;
-            startSlideshow();
+
+            let current = 0;
+            setInterval(() => {
+                const slides = container.querySelectorAll('.staff-slide');
+                slides.forEach(s => s.classList.remove('active'));
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 5000);
         }
 
-        function startSlideshow() {
-            const slides = document.querySelectorAll('.staff-slide');
-            let index = 0;
-            setInterval(() => {
-                slides[index].classList.remove('active');
-                index = (index + 1) % slides.length;
-                slides[index].classList.add('active');
-            }, 10000); // 10 seconds
+        function toggleSearch() {
+            alert("Search feature coming soon!");
+        }
+
+        function showCart() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            let message = "Cart Items:\n\n";
+            cart.forEach(item => {
+                message += `${item.name} - K${item.price} × ${item.quantity || 1}\n`;
+            });
+            alert(message);
         }
 
         // Initialize
-        window.onload = loadData;
+        window.onload = loadProducts;
     </script>
 </body>
 </html>
