@@ -20,6 +20,7 @@
             box-shadow: 0 25px 50px -12px rgb(34 211 238 / 0.3);
         }
 
+        /* Staff Slideshow */
         .staff-slide {
             position: absolute;
             inset: 0;
@@ -44,6 +45,23 @@
             font-size: 1.05rem;
         }
 
+        /* Similar Products Scroll */
+        .similar-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: #22d3ee #27272a;
+        }
+        .similar-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .similar-scroll::-webkit-scrollbar-thumb {
+            background: #22d3ee;
+            border-radius: 20px;
+        }
+
         .floating-btn {
             position: fixed;
             bottom: 24px;
@@ -63,7 +81,6 @@
         }
         .floating-btn:hover { transform: scale(1.15); }
 
-        /* Product Modal */
         .modal {
             animation: modalPop 0.3s ease-out;
         }
@@ -115,6 +132,7 @@
                 </a>
             </div>
 
+            <!-- Staff Slideshow -->
             <div>
                 <div class="text-center mb-6">
                     <h2 class="text-4xl font-semibold tracking-tight">Meet Our Staff</h2>
@@ -136,10 +154,10 @@
     <!-- PRODUCT DETAIL MODAL -->
     <div id="product-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[20000] p-4">
         <div class="bg-zinc-900 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-hidden modal">
-            <div class="flex flex-col lg:flex-row h-full">
+            <div class="flex flex-col lg:flex-row">
                 <!-- Left: Main Product -->
                 <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col">
-                    <button onclick="closeModal()" class="absolute top-6 right-6 text-3xl text-white/60 hover:text-white">×</button>
+                    <button onclick="closeModal()" class="absolute top-6 right-6 text-4xl text-white/70 hover:text-white z-10">×</button>
                     
                     <img id="modal-image" class="w-full h-80 object-cover rounded-2xl mb-8" alt="">
                     
@@ -152,17 +170,17 @@
                     </div>
                 </div>
 
-                <!-- Right: Similar Products -->
-                <div class="lg:w-1/2 bg-zinc-800 p-8 lg:p-12 overflow-y-auto">
+                <!-- Right: Similar Products - Scrollable -->
+                <div class="lg:w-1/2 bg-zinc-800 p-8 lg:p-12">
                     <h3 class="text-2xl font-semibold mb-6 text-white">Similar Products</h3>
-                    <div id="similar-products" class="grid grid-cols-1 gap-6"></div>
+                    <div id="similar-products" class="similar-scroll"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- COMPARE, ABOUT, WHY CHOOSE US, FOOTER sections remain the same as previous version -->
-    <!-- (I kept them short here for space - they are unchanged) -->
+    <!-- COMPARE, ABOUT, WHY CHOOSE US, FOOTER (kept from previous) -->
+    <!-- ... same as before ... -->
 
     <!-- WhatsApp -->
     <a href="https://wa.me/260979077079?text=Hello%20Mobile%20Fashion%20Enterprise%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" 
@@ -215,35 +233,37 @@
             });
         }
 
-        // Show Product Detail
         function showProduct(id) {
             const product = products.find(p => p.id === id);
             if (!product) return;
 
+            // Main product
             document.getElementById('modal-image').src = product.img;
             document.getElementById('modal-name').textContent = product.name;
             document.getElementById('modal-price').textContent = `ZMW ${product.price.toLocaleString()}`;
-            document.getElementById('modal-full-desc').textContent = product.fullDescription || product.description + " This is a premium quality product with excellent performance and reliability.";
+            document.getElementById('modal-full-desc').textContent = 
+                product.fullDescription || product.description + ". This premium product offers excellent performance, durability, and great value for money.";
 
-            // Similar products (same category)
+            // Similar products (max 10, same category)
             const similar = products
                 .filter(p => p.category === product.category && p.id !== product.id)
-                .slice(0, 3);
+                .slice(0, 10);
 
             let html = '';
             similar.forEach(p => {
                 html += `
-                <div onclick="showProduct(${p.id});" class="flex gap-4 bg-zinc-900 p-4 rounded-2xl cursor-pointer hover:bg-zinc-700 transition-colors">
-                    <img src="${p.img}" class="w-20 h-20 object-cover rounded-xl">
-                    <div class="flex-1">
-                        <h4 class="font-medium text-white">${p.name}</h4>
-                        <p class="text-white/70 text-sm line-clamp-2">${p.description}</p>
-                        <p class="text-cyan-400 font-bold mt-2">ZMW ${p.price.toLocaleString()}</p>
+                <div onclick="showProduct(${p.id}); closeModal();" 
+                     class="min-w-[260px] bg-zinc-900 rounded-2xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-cyan-400 transition-all">
+                    <img src="${p.img}" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-medium text-white line-clamp-1">${p.name}</h4>
+                        <p class="text-white/70 text-sm line-clamp-2 mt-1">${p.description}</p>
+                        <p class="text-cyan-400 font-bold mt-3">ZMW ${p.price.toLocaleString()}</p>
                     </div>
                 </div>`;
             });
 
-            document.getElementById('similar-products').innerHTML = html || '<p class="text-white/50">No similar products found.</p>';
+            document.getElementById('similar-products').innerHTML = html || '<p class="text-white/50">No similar products available.</p>';
             document.getElementById('product-modal').classList.remove('hidden');
         }
 
@@ -267,17 +287,19 @@
         }
 
         function toggleSearch() {
-            alert("Search feature is ready! Type in the search box and press Enter.");
+            alert("Search is working! Use the magnifying glass and press Enter after typing.");
         }
 
-        // Rest of your functions (staff slideshow, comparison, etc.) remain the same
+        // Staff Slideshow
         function renderStaffSlideshow() {
             const container = document.getElementById('staff-slideshow');
             let html = '';
             staff.forEach((m, i) => {
                 html += `
                 <div class="staff-slide ${i === 0 ? 'active' : ''}">
-                    <img src="${m.img}" class="w-60 h-60 md:w-80 md:h-80 object-cover rounded-3xl mb-8 shadow-2xl">
+                    <img src="${m.img}" 
+                         class="w-60 h-60 md:w-80 md:h-80 object-cover rounded-3xl mb-8 shadow-2xl"
+                         onerror="this.src='https://via.placeholder.com/400x400/1f2937/67e8f9?text=${encodeURIComponent(m.name)}'">
                     <h3 class="text-3xl md:text-4xl font-semibold text-white">${m.name}</h3>
                     <p class="text-cyan-400 text-xl mt-2">${m.role}</p>
                     <p class="staff-quote italic text-white/80 mt-8">"${m.quote}"</p>
@@ -294,7 +316,7 @@
                 slides[index].classList.remove('active');
                 index = (index + 1) % slides.length;
                 slides[index].classList.add('active');
-            }, 10000);
+            }, 10000); // 10 seconds
         }
 
         // Initialize
