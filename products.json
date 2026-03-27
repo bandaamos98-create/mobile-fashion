@@ -5,7 +5,7 @@
       "name": "TECHNO CAMON 50 PRO",
       "category": "phone",
       "price": 6100,
-      "description": "Titanium design with A18 Pro chip, 48MP Fusion camera, and up to 5x optical zoom. The ultimate premium smartphone.",
+      "description": "Powerful camera phone with premium design and smooth performance.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/camon50pro.jpg"
     },
     {
@@ -13,7 +13,7 @@
       "name": "INFINIX HOT 60I",
       "category": "phone",
       "price": 2700,
-      "description": "200MP main camera, S Pen included, Snapdragon 8 Elite processor, and 7 years of software updates.",
+      "description": "Great value smartphone with big battery and fast charging.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/hot60.jpg"
     },
     {
@@ -21,32 +21,31 @@
       "name": "TECHNO PHONES",
       "category": "phone",
       "price": 4500,
-      "description": "AI-powered features with Gemini, exceptional photography, and clean Android experience.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/techno.jpg"
+      "description": "Reliable Tecno smartphone with good camera and performance.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/firstlive.jpg"
     },
     {
       "id": 4,
       "name": "MUTINIKA MPETA",
       "category": "phone",
       "price": 250,
-      "description": "Snapdragon 8 Elite, 100W fast charging, smooth OxygenOS, and flagship performance.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/small.jpg"
+      "description": "Very affordable basic phone for everyday use.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop1.jpg"
     },
     {
       "id": 5,
       "name": "AFFORDABLE SMALL PHONES",
       "category": "phone",
       "price": 150,
-      "description": "Powerful Leica-tuned cameras, hyper-fast charging, and premium build quality.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/small1.jpg"
+      "description": "Budget-friendly small phone perfect for basic needs.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop2.jpg"
     },
-
     {
       "id": 6,
       "name": "AFFORDABLE LAPTOP",
       "category": "laptop",
       "price": 5600,
-      "description": "Ultra-thin and lightweight with M3 chip, stunning Liquid Retina display, and up to 18 hours battery life.",
+      "description": "Budget laptop suitable for students and basic work.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop.jpg"
     },
     {
@@ -54,7 +53,7 @@
       "name": "Dell XPS 14",
       "category": "laptop",
       "price": 1699,
-      "description": "Premium OLED touch display, Intel Core Ultra processor, and elegant aluminum design.",
+      "description": "Premium OLED touch display, Intel Core Ultra processor.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop1.jpg"
     },
     {
@@ -62,7 +61,7 @@
       "name": "Lenovo ThinkPad X1 Carbon",
       "category": "laptop",
       "price": 1499,
-      "description": "Business laptop with legendary keyboard, exceptional durability, and powerful performance.",
+      "description": "Business laptop with legendary keyboard and durability.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop2.jpg"
     },
     {
@@ -70,25 +69,16 @@
       "name": "HP Spectre x360",
       "category": "laptop",
       "price": 1399,
-      "description": "2-in-1 convertible laptop with OLED touchscreen and premium gem-cut design.",
+      "description": "2-in-1 convertible laptop with OLED touchscreen.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop3.jpg"
     },
     {
       "id": 10,
-      "name": "ASUS Zenbook 14",
-      "category": "laptop",
-      "price": 1099,
-      "description": "Compact and powerful ultrabook with excellent display and long battery life.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop.jpg"
-    },
-
-    {
-      "id": 11,
-      "name": "MORE ACCESORIES INSTALK",
+      "name": "MORE ACCESSORIES IN STOCK",
       "category": "accessory",
       "price": 249,
-      "description": "Active Noise Cancellation, Adaptive Audio, spatial audio, and up to 6 hours listening time.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/other2.jpg"
-    },
+      "description": "Various phone accessories including chargers, earbuds, cases and more.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/camon50pro.jpg"
+    }
   ]
 }
