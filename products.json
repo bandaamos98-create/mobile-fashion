@@ -88,5 +88,25 @@
       "description": "Phone cases, chargers, earbuds and more accessories in stock.",
       "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/other.jpg"
     }
+  ],
+  "staff": [
+    {
+      "name": "AMOS BANDA (DEMONSTRATION PURPOSES)",
+      "role": "Sales Manager",
+      "quote": "We help our customers find the perfect phone that fits their budget and needs.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/live01.jpg"
+    },
+    {
+      "name": "John Banda (DEMONSTRATION PURPOSES)",
+      "role": "Tech Specialist",
+      "quote": "Quality and honesty is what we stand for. Every product is carefully selected.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/live.jpg"
+    },
+    {
+      "name": "Grace Phiri",
+      "role": "Customer Support",
+      "quote": "Our goal is to make every customer happy with their purchase.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/live6.jpg"
+    }
   ]
 }
