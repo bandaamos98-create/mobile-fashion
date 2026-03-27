@@ -8,28 +8,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
-        
+       
         .logo-font { font-family: 'Space Grotesk', sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
-       
-        .product-card { 
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        
+        /* Lighter Modern Background */
+        .hero-bg { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); 
         }
-        .product-card:hover { 
-            transform: translateY(-12px); 
-            box-shadow: 0 30px 60px -15px rgb(34 211 238 / 0.3); 
+      
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-       
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px -15px rgb(34 211 238 / 0.3);
+        }
+      
         .staff-slide {
             transition: opacity 1s ease-in-out;
             position: absolute;
             inset: 0;
         }
-
+        
         .staff-quote {
             font-size: 1.05rem;
-            line-height: 1.7;
+            line-height: 1.75;
             word-break: break-word;
+        }
+
+        .why-card {
+            transition: all 0.3s ease;
+        }
+        .why-card:hover {
+            transform: translateY(-8px);
         }
 
         .floating-btn {
@@ -41,10 +52,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             font-size: 28px;
+            transition: all 0.3s ease;
         }
-       
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+      
         .search-modal {
             animation: modalPop 0.3s ease-out;
         }
@@ -55,6 +70,7 @@
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
+
     <!-- NAVBAR -->
     <nav class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -83,13 +99,13 @@
     <!-- HERO -->
     <section id="home" class="hero-bg min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-           
+          
             <!-- Left Side -->
             <div class="space-y-8">
                 <h1 class="text-6xl md:text-7xl font-bold tracking-tighter logo-font leading-none">
                     Your Trusted Tech Partner<br>in Zambia
                 </h1>
-                <p class="text-xl text-white/80">
+                <p class="text-xl text-white/90">
                     Mobile Fashion Enterprise brings top brand smartphones, tablets, laptops, and accessories to customers in Lusaka and Kabwe.
                 </p>
                 <div class="space-y-6">
@@ -97,21 +113,21 @@
                         <div class="text-4xl">📱</div>
                         <div>
                             <h4 class="font-semibold text-lg">Latest Brands</h4>
-                            <p class="text-white/70">Tecno, Infinix, Samsung, iPhone and more at competitive prices.</p>
+                            <p class="text-white/80">Tecno, Infinix, Samsung, iPhone and more at competitive prices.</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <div class="text-4xl">🛍️</div>
                         <div>
                             <h4 class="font-semibold text-lg">Quality &amp; Affordability</h4>
-                            <p class="text-white/70">Genuine products with excellent customer service.</p>
+                            <p class="text-white/80">Genuine products with excellent customer service.</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <div class="text-4xl">📍</div>
                         <div>
                             <h4 class="font-semibold text-lg">Lusaka &amp; Kabwe</h4>
-                            <p class="text-white/70">Convenient locations with reliable support.</p>
+                            <p class="text-white/80">Convenient locations with reliable support.</p>
                         </div>
                     </div>
                 </div>
@@ -125,6 +141,33 @@
                     <p class="text-cyan-400">The friendly team ready to serve you</p>
                 </div>
                 <div id="staff-slideshow" class="relative h-[520px] md:h-[480px] rounded-3xl overflow-hidden shadow-2xl bg-zinc-900"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US - New Section -->
+    <section class="py-20 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-semibold tracking-tight">Why Choose Us</h2>
+                <p class="text-cyan-400 mt-3 text-xl">We make buying tech simple, honest and affordable</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                    <div class="text-5xl mb-6">✅</div>
+                    <h3 class="text-2xl font-semibold mb-3">Genuine Products</h3>
+                    <p class="text-white/70">All phones, laptops and accessories are 100% original with warranty.</p>
+                </div>
+                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                    <div class="text-5xl mb-6">💰</div>
+                    <h3 class="text-2xl font-semibold mb-3">Best Prices</h3>
+                    <p class="text-white/70">We offer the most competitive prices in Lusaka and Kabwe.</p>
+                </div>
+                <div class="why-card bg-zinc-800 p-8 rounded-3xl border border-white/10">
+                    <div class="text-5xl mb-6">🛠️</div>
+                    <h3 class="text-2xl font-semibold mb-3">After Sales Support</h3>
+                    <p class="text-white/70">Reliable technical support and repair services for all products.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -213,10 +256,8 @@
             try {
                 const res = await fetch('https://bandaamos98-create.github.io/mobile-fashion/products.json');
                 const data = await res.json();
-                
                 products = data.products || [];
                 staff = data.staff || [];
-
                 renderProducts();
                 populateComparisonSelects();
                 renderStaffSlideshow();
@@ -228,12 +269,10 @@
         function renderProducts() {
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
-            
             if (products.length === 0) {
                 grid.innerHTML = `<p class="col-span-full text-center py-12 text-gray-400">No products available at the moment.</p>`;
                 return;
             }
-
             products.forEach(product => {
                 const card = `
                 <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
@@ -247,7 +286,7 @@
                                 <span class="block text-xs text-gray-400">Price</span>
                                 <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
                             </div>
-                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
+                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()"
                                     class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
                                 Add to Cart
                             </button>
@@ -285,20 +324,16 @@
             const term = document.getElementById('search-input').value.toLowerCase().trim();
             toggleSearch();
             if (!term) return;
-
             const filtered = products.filter(p =>
-                p.name.toLowerCase().includes(term) || 
+                p.name.toLowerCase().includes(term) ||
                 p.description.toLowerCase().includes(term)
             );
-
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
-
             if (filtered.length === 0) {
                 grid.innerHTML = `<p class="col-span-full text-center py-12 text-gray-400">No products found for "${term}"</p>`;
                 return;
             }
-
             filtered.forEach(product => {
                 const card = `
                 <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
@@ -311,7 +346,7 @@
                                 <span class="block text-xs text-gray-400">Price</span>
                                 <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
                             </div>
-                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
+                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()"
                                     class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
                                 Add to Cart
                             </button>
@@ -326,10 +361,8 @@
             const phones = products.filter(p => p.category === "phone");
             const s1 = document.getElementById('phone1');
             const s2 = document.getElementById('phone2');
-            
             s1.innerHTML = '<option value="">Select Phone 1</option>';
             s2.innerHTML = '<option value="">Select Phone 2</option>';
-
             phones.forEach(p => {
                 s1.innerHTML += `<option value="${p.id}">${p.name}</option>`;
                 s2.innerHTML += `<option value="${p.id}">${p.name}</option>`;
@@ -343,10 +376,8 @@
                 alert("Please select two different phones.");
                 return;
             }
-
             const p1 = products.find(p => p.id === id1);
             const p2 = products.find(p => p.id === id2);
-
             const result = document.getElementById('comparison-result');
             result.innerHTML = `
                 <div class="bg-zinc-800 p-8 rounded-3xl">
@@ -364,36 +395,27 @@
             result.classList.remove('hidden');
         }
 
-        // Fixed Staff Slideshow
+        // Staff Slideshow - Fixed for long quotes
         function renderStaffSlideshow() {
             const container = document.getElementById('staff-slideshow');
             let html = '';
-
             staff.forEach((member, index) => {
                 html += `
                 <div class="staff-slide flex flex-col md:flex-row items-center gap-8 md:gap-12 px-6 md:px-12 h-full ${index === 0 ? 'opacity-100' : 'opacity-0'}">
-                    
-                    <!-- Image -->
                     <div class="w-60 h-60 md:w-72 md:h-72 flex-shrink-0">
                         <img src="${member.img}" alt="${member.name}"
                              class="w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10"
                              onerror="this.src='https://via.placeholder.com/400x400/1f2937/67e8f9?text=${encodeURIComponent(member.name)}'">
                     </div>
-
-                    <!-- Info -->
                     <div class="flex-1 text-center md:text-left max-w-lg">
                         <h3 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">${member.name}</h3>
                         <p class="text-cyan-400 text-xl mt-2 font-medium">${member.role}</p>
-                        
                         <div class="mt-10 pt-8 border-t border-white/10">
-                            <p class="staff-quote italic text-white/80">
-                                "${member.quote}"
-                            </p>
+                            <p class="staff-quote italic text-white/80">"${member.quote}"</p>
                         </div>
                     </div>
                 </div>`;
             });
-
             container.innerHTML = html || `<p class="text-center text-white/50 py-20">No staff information available.</p>`;
             startSlideshow();
         }
@@ -401,7 +423,6 @@
         function startSlideshow() {
             const slides = document.querySelectorAll('.staff-slide');
             if (slides.length <= 1) return;
-
             let index = 0;
             setInterval(() => {
                 slides.forEach(s => s.classList.add('opacity-0'));
