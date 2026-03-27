@@ -1,1 +1,126 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 16 Pro",
+      "category": "phone",
+      "price": 1299,
+      "description": "Titanium design with A18 Pro chip, 48MP Fusion camera, and up to 5x optical zoom. The ultimate premium smartphone.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/iphone-16-pro.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S25 Ultra",
+      "category": "phone",
+      "price": 1199,
+      "description": "200MP main camera, S Pen included, Snapdragon 8 Elite processor, and 7 years of software updates.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/samsung-s25-ultra.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Google Pixel 9 Pro",
+      "category": "phone",
+      "price": 999,
+      "description": "AI-powered features with Gemini, exceptional photography, and clean Android experience.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/pixel-9-pro.jpg"
+    },
+    {
+      "id": 4,
+      "name": "OnePlus 13",
+      "category": "phone",
+      "price": 849,
+      "description": "Snapdragon 8 Elite, 100W fast charging, smooth OxygenOS, and flagship performance.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/oneplus-13.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Xiaomi 15 Pro",
+      "category": "phone",
+      "price": 799,
+      "description": "Powerful Leica-tuned cameras, hyper-fast charging, and premium build quality.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/xiaomi-15-pro.jpg"
+    },
 
+    {
+      "id": 6,
+      "name": "MacBook Air M3",
+      "category": "laptop",
+      "price": 1299,
+      "description": "Ultra-thin and lightweight with M3 chip, stunning Liquid Retina display, and up to 18 hours battery life.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/macbook-air-m3.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Dell XPS 14",
+      "category": "laptop",
+      "price": 1699,
+      "description": "Premium OLED touch display, Intel Core Ultra processor, and elegant aluminum design.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/dell-xps-14.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "category": "laptop",
+      "price": 1499,
+      "description": "Business laptop with legendary keyboard, exceptional durability, and powerful performance.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/thinkpad-x1-carbon.jpg"
+    },
+    {
+      "id": 9,
+      "name": "HP Spectre x360",
+      "category": "laptop",
+      "price": 1399,
+      "description": "2-in-1 convertible laptop with OLED touchscreen and premium gem-cut design.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/hp-spectre-x360.jpg"
+    },
+    {
+      "id": 10,
+      "name": "ASUS Zenbook 14",
+      "category": "laptop",
+      "price": 1099,
+      "description": "Compact and powerful ultrabook with excellent display and long battery life.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/asus-zenbook-14.jpg"
+    },
+
+    {
+      "id": 11,
+      "name": "AirPods Pro 2",
+      "category": "accessory",
+      "price": 249,
+      "description": "Active Noise Cancellation, Adaptive Audio, spatial audio, and up to 6 hours listening time.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/airpods-pro-2.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Samsung Galaxy Buds 3 Pro",
+      "category": "accessory",
+      "price": 229,
+      "description": "Premium sound with intelligent ANC and 360 Audio support.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/galaxy-buds-3-pro.jpg"
+    },
+    {
+      "id": 13,
+      "name": "MagSafe Leather Case (iPhone 16)",
+      "category": "accessory",
+      "price": 59,
+      "description": "Premium leather case with strong MagSafe compatibility for iPhone 16 series.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/magsafe-leather-case.jpg"
+    },
+    {
+      "id": 14,
+      "name": "65W GaN Fast Charger",
+      "category": "accessory",
+      "price": 39,
+      "description": "Ultra-fast charging adapter compatible with phones and laptops.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/65w-gan-charger.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Wireless Power Bank 10000mAh",
+      "category": "accessory",
+      "price": 49,
+      "description": "Slim magnetic wireless power bank with fast charging support.",
+      "img": "https://raw.githubusercontent.com/YOUR-USERNAME/MobileFashionEnterprise/main/images/wireless-powerbank.jpg"
+    }
+  ]
+}
