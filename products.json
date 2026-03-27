@@ -22,7 +22,7 @@
       "category": "phone",
       "price": 4500,
       "description": "Reliable Tecno smartphone with good camera and performance.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/firstlive.jpg"
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/techno.jpg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "category": "phone",
       "price": 250,
       "description": "Very affordable basic phone for everyday use.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop1.jpg"
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/small.jpg"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "category": "phone",
       "price": 150,
       "description": "Budget-friendly small phone perfect for basic needs.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop2.jpg"
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/small1.jpg"
     },
     {
       "id": 6,
@@ -74,11 +74,19 @@
     },
     {
       "id": 10,
-      "name": "MORE ACCESSORIES IN STOCK",
+      "name": "ASUS Zenbook 14",
+      "category": "laptop",
+      "price": 1099,
+      "description": "Compact and powerful ultrabook.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/laptop.jpg"
+    },
+    {
+      "id": 11,
+      "name": "ACCESSORIES",
       "category": "accessory",
       "price": 249,
-      "description": "Various phone accessories including chargers, earbuds, cases and more.",
-      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/camon50pro.jpg"
+      "description": "Phone cases, chargers, earbuds and more accessories in stock.",
+      "img": "https://raw.githubusercontent.com/bandaamos98-create/mobile-fashion/main/images/other.jpg"
     }
   ]
 }
