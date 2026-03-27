@@ -20,7 +20,7 @@
             box-shadow: 0 25px 50px -12px rgb(34 211 238 / 0.3);
         }
 
-        /* FIXED STAFF SLIDESHOW */
+        /* Bigger Staff Slideshow */
         .staff-slide {
             position: absolute;
             inset: 0;
@@ -40,8 +40,9 @@
 
         .staff-quote {
             line-height: 1.65;
-            max-width: 380px;
+            max-width: 420px;
             text-align: center;
+            font-size: 1.05rem;
         }
 
         .floating-btn {
@@ -83,7 +84,7 @@
                 <a href="#about" class="hover:text-cyan-400">About Us</a>
             </div>
             <div class="flex items-center gap-6">
-                <button onclick="toggleSearch()" class="text-2xl hover:text-cyan-400"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button onclick="toggleSearch()" class="text-2xl hover:text-cyan-400 transition-colors"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <button onclick="showCart()" class="relative text-2xl hover:text-cyan-400">
                     <i class="fa-solid fa-shopping-cart"></i>
                     <span id="cart-count" class="absolute -top-1 -right-1 bg-cyan-400 text-black text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
@@ -109,13 +110,13 @@
                 </a>
             </div>
 
-            <!-- Staff Slideshow -->
+            <!-- Bigger Staff Slideshow -->
             <div>
                 <div class="text-center mb-6">
                     <h2 class="text-4xl font-semibold tracking-tight">Meet Our Staff</h2>
                     <p class="text-cyan-400">The friendly team ready to serve you</p>
                 </div>
-                <div id="staff-slideshow" class="relative h-[520px] md:h-[480px] bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl"></div>
+                <div id="staff-slideshow" class="relative h-[580px] md:h-[520px] bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl"></div>
             </div>
         </div>
     </section>
@@ -204,6 +205,21 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- SEARCH MODAL -->
+    <div id="search-modal" class="hidden fixed inset-0 bg-black/80 flex items-start justify-center pt-32 z-[20000]">
+        <div class="bg-zinc-900 w-full max-w-xl mx-4 rounded-3xl p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold">Search Products</h3>
+                <button onclick="toggleSearch()" class="text-3xl text-white/60 hover:text-white">×</button>
+            </div>
+            <input id="search-input" type="text"
+                   class="w-full bg-zinc-800 text-white rounded-3xl px-6 py-5 text-lg outline-none focus:ring-2 focus:ring-cyan-400"
+                   placeholder="Search phones, laptops, accessories..."
+                   onkeyup="if(event.key === 'Enter') handleSearch()">
+            <p class="text-sm text-white/50 mt-4">Try: "Camon", "Infinix", "Laptop"</p>
+        </div>
+    </div>
+
     <script>
         let products = [];
         let staff = [];
@@ -223,10 +239,16 @@
             }
         }
 
-        function renderProducts() {
+        function renderProducts(filteredProducts = products) {
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
-            products.forEach(product => {
+            
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = `<p class="col-span-full text-center py-12 text-gray-400">No products found.</p>`;
+                return;
+            }
+
+            filteredProducts.forEach(product => {
                 const card = `
                 <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
                     <img src="${product.img}" alt="${product.name}" class="w-full h-56 object-cover"
@@ -266,7 +288,27 @@
         }
 
         function toggleSearch() {
-            alert("Search feature coming soon!");
+            const modal = document.getElementById('search-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                setTimeout(() => document.getElementById('search-input').focus(), 100);
+            }
+        }
+
+        function handleSearch() {
+            const term = document.getElementById('search-input').value.toLowerCase().trim();
+            if (!term) {
+                renderProducts();
+                return;
+            }
+
+            const filtered = products.filter(p =>
+                p.name.toLowerCase().includes(term) ||
+                p.description.toLowerCase().includes(term)
+            );
+
+            renderProducts(filtered);
+            toggleSearch(); // Close modal after search
         }
 
         function populateComparisonSelects() {
@@ -304,18 +346,20 @@
             result.classList.remove('hidden');
         }
 
-        // Your Fixed Staff Slideshow
+        // Bigger Staff Slideshow with 10 second interval
         function renderStaffSlideshow() {
             const container = document.getElementById('staff-slideshow');
             let html = '';
+            
             staff.forEach((m, i) => {
                 html += `
                 <div class="staff-slide ${i === 0 ? 'active' : ''}">
-                    <img src="${m.img}" class="w-56 h-56 object-cover rounded-3xl mb-6 shadow-2xl"
+                    <img src="${m.img}" 
+                         class="w-60 h-60 md:w-80 md:h-80 object-cover rounded-3xl mb-8 shadow-2xl"
                          onerror="this.src='https://via.placeholder.com/400x400/1f2937/67e8f9?text=${encodeURIComponent(m.name)}'">
-                    <h3 class="text-3xl font-semibold text-white">${m.name}</h3>
-                    <p class="text-cyan-400 role text-xl">${m.role}</p>
-                    <p class="staff-quote italic text-white/80 mt-6">"${m.quote}"</p>
+                    <h3 class="text-3xl md:text-4xl font-semibold text-white">${m.name}</h3>
+                    <p class="text-cyan-400 text-xl mt-2">${m.role}</p>
+                    <p class="staff-quote italic text-white/80 mt-8">"${m.quote}"</p>
                 </div>`;
             });
             container.innerHTML = html;
@@ -329,10 +373,10 @@
                 slides[index].classList.remove('active');
                 index = (index + 1) % slides.length;
                 slides[index].classList.add('active');
-            }, 5000);
+            }, 10000); // 10 seconds
         }
 
-        // Initialize everything
+        // Initialize
         window.onload = loadData;
     </script>
 </body>
