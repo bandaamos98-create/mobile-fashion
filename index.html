@@ -25,7 +25,13 @@
             position: absolute;
             inset: 0;
         }
-       
+
+        .staff-quote {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+
         .floating-btn {
             position: fixed;
             z-index: 10000;
@@ -45,13 +51,6 @@
         @keyframes modalPop {
             from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Improved staff quote styling */
-        .staff-quote {
-            font-size: 1.1rem;
-            line-height: 1.65;
-            word-break: break-word;
         }
     </style>
 </head>
@@ -81,11 +80,11 @@
         </div>
     </nav>
 
-    <!-- HERO - Split Layout -->
+    <!-- HERO -->
     <section id="home" class="hero-bg min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
            
-            <!-- LEFT: Company Focus -->
+            <!-- Left Side -->
             <div class="space-y-8">
                 <h1 class="text-6xl md:text-7xl font-bold tracking-tighter logo-font leading-none">
                     Your Trusted Tech Partner<br>in Zambia
@@ -105,21 +104,21 @@
                         <div class="text-4xl">🛍️</div>
                         <div>
                             <h4 class="font-semibold text-lg">Quality &amp; Affordability</h4>
-                            <p class="text-white/70">Genuine products with excellent customer service and fast delivery.</p>
+                            <p class="text-white/70">Genuine products with excellent customer service.</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <div class="text-4xl">📍</div>
                         <div>
                             <h4 class="font-semibold text-lg">Lusaka &amp; Kabwe</h4>
-                            <p class="text-white/70">Convenient locations with reliable after-sales support.</p>
+                            <p class="text-white/70">Convenient locations with reliable support.</p>
                         </div>
                     </div>
                 </div>
                 <a href="#shop" class="inline-block bg-cyan-400 hover:bg-cyan-300 text-black font-semibold px-10 py-4 rounded-3xl text-lg">Explore Our Products</a>
             </div>
 
-            <!-- RIGHT: Meet Our Staff Slideshow (FIXED) -->
+            <!-- Right Side: Staff Slideshow -->
             <div>
                 <div class="text-center mb-6">
                     <h2 class="text-4xl font-semibold tracking-tight">Meet Our Staff</h2>
@@ -214,19 +213,27 @@
             try {
                 const res = await fetch('https://bandaamos98-create.github.io/mobile-fashion/products.json');
                 const data = await res.json();
+                
                 products = data.products || [];
                 staff = data.staff || [];
+
                 renderProducts();
                 populateComparisonSelects();
                 renderStaffSlideshow();
             } catch(e) {
-                console.error(e);
+                console.error("Error loading data:", e);
             }
         }
 
         function renderProducts() {
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
+            
+            if (products.length === 0) {
+                grid.innerHTML = `<p class="col-span-full text-center py-12 text-gray-400">No products available at the moment.</p>`;
+                return;
+            }
+
             products.forEach(product => {
                 const card = `
                 <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
@@ -240,7 +247,7 @@
                                 <span class="block text-xs text-gray-400">Price</span>
                                 <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
                             </div>
-                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()"
+                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
                                     class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
                                 Add to Cart
                             </button>
@@ -278,45 +285,51 @@
             const term = document.getElementById('search-input').value.toLowerCase().trim();
             toggleSearch();
             if (!term) return;
+
             const filtered = products.filter(p =>
-                p.name.toLowerCase().includes(term) ||
+                p.name.toLowerCase().includes(term) || 
                 p.description.toLowerCase().includes(term)
             );
+
             const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
             if (filtered.length === 0) {
                 grid.innerHTML = `<p class="col-span-full text-center py-12 text-gray-400">No products found for "${term}"</p>`;
-            } else {
-                grid.innerHTML = '';
-                filtered.forEach(product => {
-                    const card = `
-                    <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
-                        <img src="${product.img}" alt="${product.name}" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-semibold text-xl leading-tight text-white">${product.name}</h3>
-                            <p class="text-white/70 text-sm mt-3 line-clamp-2">${product.description}</p>
-                            <div class="mt-6 flex justify-between items-end">
-                                <div>
-                                    <span class="block text-xs text-gray-400">Price</span>
-                                    <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
-                                </div>
-                                <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()"
-                                        class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>`;
-                    grid.innerHTML += card;
-                });
+                return;
             }
+
+            filtered.forEach(product => {
+                const card = `
+                <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <img src="${product.img}" alt="${product.name}" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl leading-tight text-white">${product.name}</h3>
+                        <p class="text-white/70 text-sm mt-3 line-clamp-2">${product.description}</p>
+                        <div class="mt-6 flex justify-between items-end">
+                            <div>
+                                <span class="block text-xs text-gray-400">Price</span>
+                                <span class="text-3xl font-bold text-cyan-400">ZMW ${product.price.toLocaleString()}</span>
+                            </div>
+                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
+                                    class="bg-cyan-400 hover:bg-cyan-300 text-black px-7 py-3 rounded-2xl font-medium text-sm">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+                grid.innerHTML += card;
+            });
         }
 
         function populateComparisonSelects() {
             const phones = products.filter(p => p.category === "phone");
             const s1 = document.getElementById('phone1');
             const s2 = document.getElementById('phone2');
+            
             s1.innerHTML = '<option value="">Select Phone 1</option>';
             s2.innerHTML = '<option value="">Select Phone 2</option>';
+
             phones.forEach(p => {
                 s1.innerHTML += `<option value="${p.id}">${p.name}</option>`;
                 s2.innerHTML += `<option value="${p.id}">${p.name}</option>`;
@@ -326,9 +339,14 @@
         function performComparison() {
             const id1 = parseInt(document.getElementById('phone1').value);
             const id2 = parseInt(document.getElementById('phone2').value);
-            if (!id1 || !id2 || id1 === id2) return alert("Please select two different phones.");
+            if (!id1 || !id2 || id1 === id2) {
+                alert("Please select two different phones.");
+                return;
+            }
+
             const p1 = products.find(p => p.id === id1);
             const p2 = products.find(p => p.id === id2);
+
             const result = document.getElementById('comparison-result');
             result.innerHTML = `
                 <div class="bg-zinc-800 p-8 rounded-3xl">
@@ -346,29 +364,29 @@
             result.classList.remove('hidden');
         }
 
-        // FIXED Staff Slideshow
+        // Fixed Staff Slideshow
         function renderStaffSlideshow() {
             const container = document.getElementById('staff-slideshow');
             let html = '';
 
             staff.forEach((member, index) => {
                 html += `
-                <div class="staff-slide flex flex-col md:flex-row items-center gap-8 md:gap-12 px-6 md:px-12 lg:px-16 h-full ${index === 0 ? 'opacity-100' : 'opacity-0'}">
+                <div class="staff-slide flex flex-col md:flex-row items-center gap-8 md:gap-12 px-6 md:px-12 h-full ${index === 0 ? 'opacity-100' : 'opacity-0'}">
                     
-                    <!-- Staff Image -->
-                    <div class="w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 flex-shrink-0">
+                    <!-- Image -->
+                    <div class="w-60 h-60 md:w-72 md:h-72 flex-shrink-0">
                         <img src="${member.img}" alt="${member.name}"
                              class="w-full h-full object-cover rounded-3xl shadow-2xl border border-white/10"
                              onerror="this.src='https://via.placeholder.com/400x400/1f2937/67e8f9?text=${encodeURIComponent(member.name)}'">
                     </div>
 
-                    <!-- Staff Info -->
+                    <!-- Info -->
                     <div class="flex-1 text-center md:text-left max-w-lg">
                         <h3 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">${member.name}</h3>
                         <p class="text-cyan-400 text-xl mt-2 font-medium">${member.role}</p>
                         
                         <div class="mt-10 pt-8 border-t border-white/10">
-                            <p class="staff-quote italic text-white/80 leading-relaxed">
+                            <p class="staff-quote italic text-white/80">
                                 "${member.quote}"
                             </p>
                         </div>
@@ -376,20 +394,20 @@
                 </div>`;
             });
 
-            container.innerHTML = html;
+            container.innerHTML = html || `<p class="text-center text-white/50 py-20">No staff information available.</p>`;
             startSlideshow();
         }
 
         function startSlideshow() {
-            let index = 0;
             const slides = document.querySelectorAll('.staff-slide');
-            if (slides.length === 0) return;
+            if (slides.length <= 1) return;
 
+            let index = 0;
             setInterval(() => {
                 slides.forEach(s => s.classList.add('opacity-0'));
                 index = (index + 1) % slides.length;
                 slides[index].classList.remove('opacity-0');
-            }, 5000); // Change slide every 5 seconds
+            }, 5000);
         }
 
         // Initialize
