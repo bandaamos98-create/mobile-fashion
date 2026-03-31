@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- DESKTOP MODE FIX - Normal zoom on phone & tablet, full desktop layout -->
+    <!-- DESKTOP MODE LIKE BRITO MOBILE - Normal zoom + proper scaling on tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <title>Mobile Fashion Enterprise | Trendy Phones, Laptops & Accessories</title>
@@ -281,8 +281,7 @@
                             <a id="modal-buy-btn" href="#" target="_blank" class="btn-orange text-white text-center py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-2">
                                 <i class="fa-brands fa-whatsapp"></i> Buy via WhatsApp
                             </a>
-                            <button onclick="addToBasketFromModal()" id="modal-add-btn"
-                                    class="bg-zinc-900 hover:bg-black text-white text-center py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-2 transition-all">
+                            <button onclick="addToBasketFromModal()" id="modal-add-btn" class="bg-zinc-900 hover:bg-black text-white text-center py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-2 transition-all">
                                 <i class="fa-solid fa-cart-plus"></i> Add to Basket
                             </button>
                         </div>
@@ -580,13 +579,8 @@
                 } else {
                     card.innerHTML = `<img src="${item.img}" class="w-full h-56 object-cover" onerror="this.src='https://via.placeholder.com/400x300/F97316/white?text=${encodeURIComponent(item.name)}'"><div class="p-6"><h3 class="font-semibold text-xl text-zinc-900">${item.name}</h3>${item.price ? `<p class="accent-orange text-3xl font-bold mt-3">K${item.price}</p>` : ''}<button class="add-to-basket-btn mt-5 w-full bg-black text-white py-3.5 rounded-2xl font-medium flex items-center justify-center gap-2"><i class="fa-solid fa-cart-plus"></i> Add to Basket</button></div>`;
                     const btn = card.querySelector('.add-to-basket-btn');
-                    btn.addEventListener('click', (e) => {
-                        e.stopImmediatePropagation();
-                        addToBasket(item, btn);
-                    });
-                    card.addEventListener('click', (e) => {
-                        if (!e.target.closest('button')) showProductDetail(item);
-                    });
+                    btn.addEventListener('click', (e) => { e.stopImmediatePropagation(); addToBasket(item, btn); });
+                    card.addEventListener('click', (e) => { if (!e.target.closest('button')) showProductDetail(item); });
                 }
                 content.appendChild(card);
             });
@@ -657,7 +651,6 @@
         function addToBasket(product, buttonElement = null) {
             basket.push(product);
             document.getElementById('nav-basket-count').textContent = basket.length;
-           
             if (buttonElement) {
                 const originalHTML = buttonElement.innerHTML;
                 buttonElement.innerHTML = `<i class="fa-solid fa-check"></i> Added!`;
@@ -832,14 +825,14 @@
             }
         }
 
-        // KEY FIX: Dynamic desktop scaling for normal zoom on all devices
+        // BRITO-STYLE DESKTOP VIEWPORT FIX - Prevents shrinking on tablet
         function forceDesktopViewport() {
             const meta = document.querySelector('meta[name="viewport"]');
             if (!meta) return;
             const deviceWidth = window.screen.width || window.innerWidth || 1280;
             const desiredWidth = 1280;
             let scale = deviceWidth / desiredWidth;
-            scale = Math.min(scale, 1.0); // Never scale above 100%
+            scale = Math.min(scale, 1.0); // Never bigger than 100%
             meta.setAttribute('content', `width=${desiredWidth}, initial-scale=${scale.toFixed(3)}, maximum-scale=2.5, user-scalable=yes`);
         }
 
@@ -848,7 +841,6 @@
             loadData();
         };
 
-        // Close modals when clicking outside
         document.getElementById('employee-modal').addEventListener('click', function(e) {
             if (e.target === this) closeEmployeeModal();
         });
