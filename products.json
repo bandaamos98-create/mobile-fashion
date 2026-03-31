@@ -2,7 +2,7 @@
   "company": {
     "name": "Mobile Fashion Enterprise",
     "slogan": "Genuine Phones, Laptops & Accessories",
-    "location": "Next to FNB Bank, Opposite Puma Filling Station (Puma Fueling Station.Buntungwa Avenue / Buntungwa Street Kabwe, Zambia",
+    "location": "Next to FNB Bank, Opposite Puma Filling Station (Puma Fueling Station), Buntungwa Avenue / Buntungwa Street, Kabwe, Zambia",
     "phone": "+260 961971085",
     "whatsapp": "+260 979077079",
     "email": "bandaamos98@gmail.com",
@@ -53,6 +53,15 @@
       "description": "High quality portable Bluetooth speaker.",
       "fullDescription": "Oraimo Bluetooth speaker delivers loud, clear sound with long battery life.",
       "img": "https://bandaamos98-create.github.io/mobile-fashion/images/btspeakeroraimo.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Accessory Combo",
+      "category": "accessory",
+      "price": 350,
+      "description": "Charger, earphones, case and screen protector combo.",
+      "fullDescription": "Complete accessory bundle including fast charger, wired earphones, protective case and tempered glass screen protector.",
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/connecting.jpg"
     },
     {
       "id": 9,
@@ -152,15 +161,6 @@
       "description": "Best HP laptops for you.",
       "fullDescription": "Reliable performance for work and study.",
       "img": "https://bandaamos98-create.github.io/mobile-fashion/images/laps.jpg"
-    },
-    {
-      "id": 8,
-      "name": "Accessory Combo",
-      "category": "accessory",
-      "price": 350,
-      "description": "Charger, earphones, case and screen protector combo.",
-      "fullDescription": "Complete accessory bundle including fast charger, wired earphones, protective case and tempered glass screen protector.",
-      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/connecting.jpg"
     }
   ],
   "staff": [
@@ -181,7 +181,7 @@
       "role": "Customer Support",
       "quote": "Our goal is to make every customer happy with their purchase and provide excellent after-sales support.",
       "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live01.jpg"
-    }      
+    },
     {
       "name": "THE D.J HIMSELF",
       "role": "Entertainment Manager",
@@ -193,7 +193,7 @@
       "role": "Sales and Marketing",
       "quote": "Branding and Advertisments.",
       "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live2.jpg"
-    }   
+    },
     {
       "name": "THE ADVERTISER",
       "role": "Sales and Marketing",
@@ -205,7 +205,7 @@
       "role": "Customer Support",
       "quote": "Our goal is to make every customer happy with their purchase and provide excellent after-sales support.",
       "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live4.jpg"
-    }       
+    },
     {
       "name": "THE BOSS LADY",
       "role": "Customer Support",
