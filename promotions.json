@@ -2,7 +2,7 @@
   "promotions": [
     {
       "id": 1,
-      "active": false,
+      "active": true,
       "type": "topbar",
       "text": "🚨 FLASH SALE: 15% OFF Selected Phones This Week! Visit our Store now!!",
       "startDate": "2026-03-25",
@@ -12,7 +12,7 @@
     },
     {
       "id": 5,
-      "active": false,
+      "active": true,
       "type": "paired-slideshow",
       "startDate": "2026-03-25",
       "endDate": "2026-04-30",
