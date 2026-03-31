@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- FIXED VIEWPORT - Opens at natural zoom on phones while keeping desktop layout -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- DESKTOP MODE FIX - Opens at proper zoom like a desktop site -->
+    <meta name="viewport" content="width=1280, initial-scale=0.9, maximum-scale=2.0, user-scalable=yes">
    
     <title>Mobile Fashion Enterprise | Trendy Phones, Laptops & Accessories</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -483,7 +483,7 @@
             let photosHTML = '';
 
             slides.forEach((slide, i) => {
-                const image = slide.image || "https://via.placeholder.com/800x800/1f2937/F97316?text=Phone";
+                const image = slide.image;
                 const name = slide.name;
                 const price = slide.price;
                 const desc = slide.description || "";
@@ -854,7 +854,14 @@
             }
         });
 
+        // Force proper zoom on load
+        function forceDesktopViewport() {
+            const meta = document.querySelector('meta[name="viewport"]');
+            if (meta) meta.setAttribute('content', 'width=1280, initial-scale=0.9, maximum-scale=2.0, user-scalable=yes');
+        }
+
         window.onload = function() {
+            forceDesktopViewport();
             loadData();
         };
     </script>
