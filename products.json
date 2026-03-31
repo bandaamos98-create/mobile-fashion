@@ -165,22 +165,52 @@
   ],
   "staff": [
     {
-      "name": "AMOS BANDA",
-      "role": "IT SPECIALIST",
+      "name": "THE BIGGER BOSS",
+      "role": "AREA OPERATIONS SPECIALIST (AOS)",
       "quote": "Lets build your websites.",
-      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/profile-pic.png"
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live6.jpg"
     },
     {
-      "name": "John Banda",
-      "role": "Tech Specialist",
+      "name": "NIZZA",
+      "role": "Customer Service",
       "quote": "We help our customers find the perfect phone or laptop that matches their needs and budget.",
-      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/john.jpg"
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live.jpg"
     },
     {
-      "name": "Trisha Mwanza",
+      "name": "MADAM DORCUS",
       "role": "Customer Support",
       "quote": "Our goal is to make every customer happy with their purchase and provide excellent after-sales support.",
-      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/mary.jpg"
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live01.jpg"
+    }      
+    {
+      "name": "THE D.J HIMSELF",
+      "role": "Entertainment Manager",
+      "quote": "Makes the place live and incharge of entertainment.",
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live1.jpg"
+    },
+    {
+      "name": "THE ADVERTISER",
+      "role": "Sales and Marketing",
+      "quote": "Branding and Advertisments.",
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live2.jpg"
+    }   
+    {
+      "name": "THE ADVERTISER",
+      "role": "Sales and Marketing",
+      "quote": "Branding and Making Deals.",
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live3.jpg"
+    },
+    {
+      "name": "THE INFLUENCER",
+      "role": "Customer Support",
+      "quote": "Our goal is to make every customer happy with their purchase and provide excellent after-sales support.",
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live4.jpg"
+    }       
+    {
+      "name": "THE BOSS LADY",
+      "role": "Customer Support",
+      "quote": "Our goal is to make every customer happy with their purchase and provide excellent after-sales support.",
+      "img": "https://bandaamos98-create.github.io/mobile-fashion/images/live5.jpg"
     }
   ],
   "serviceStaff": [
