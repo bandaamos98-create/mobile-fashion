@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- FIXED DESKTOP MODE FOR ALL DEVICES (phone + tablet + desktop) - normal zoom, page fits screen perfectly -->
-    <meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
-  
+    <!-- DESKTOP MODE FIX - Normal zoom on phone & tablet, full desktop layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>Mobile Fashion Enterprise | Trendy Phones, Laptops & Accessories</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -94,6 +94,7 @@
     <div id="topbar" class="top-announcement py-3 px-6 text-center text-sm font-semibold hidden">
         <a id="topbar-link" class="flex items-center justify-center gap-2 text-white"></a>
     </div>
+
     <!-- NAVBAR -->
     <nav class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-[1280px] mx-auto px-6 py-4">
@@ -126,11 +127,13 @@
             </div>
         </div>
     </nav>
+
     <!-- LIVE BANNER -->
     <div class="bg-black border-b border-orange-500 py-3 px-6 text-center text-sm font-medium flex items-center justify-center gap-3">
         <span class="blink-live text-xl font-bold text-orange-500">NOTICE ⚠️</span>
         <span class="text-white">All purchases & transactions MUST be done at the branch in Kabwe • No online sales or delivery</span>
     </div>
+
     <!-- HERO SECTION -->
     <section id="home" class="hero-bg flex items-center relative">
         <div id="normal-hero" class="max-w-[1280px] mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center w-full">
@@ -155,6 +158,7 @@
             <div id="promo-photos-container" class="relative h-[460px] bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl"></div>
         </div>
     </section>
+
     <!-- SHOP SECTION -->
     <section id="shop" class="py-20 bg-white text-black">
         <div class="max-w-[1280px] mx-auto px-6">
@@ -177,6 +181,7 @@
             </div>
         </div>
     </section>
+
     <!-- WHY CHOOSE US -->
     <section id="why-choose-us" class="py-20 bg-zinc-950">
         <div class="max-w-[1280px] mx-auto px-6">
@@ -215,6 +220,7 @@
             </div>
         </div>
     </section>
+
     <!-- ABOUT US -->
     <section id="about" class="py-20 bg-white text-black">
         <div class="max-w-[1280px] mx-auto px-6 text-center">
@@ -226,10 +232,12 @@
             </p>
         </div>
     </section>
+
     <!-- FLOATING WHATSAPP -->
     <a href="https://wa.me/260979077079" target="_blank" class="floating-whatsapp btn-orange text-white px-6 py-3.5 rounded-3xl flex items-center gap-3 shadow-2xl font-medium text-sm">
         <i class="fa-brands fa-whatsapp text-2xl"></i><span>Chat with Us</span>
     </a>
+
     <!-- MOBILE MENU -->
     <div id="mobile-menu">
         <div class="flex flex-col h-full">
@@ -247,11 +255,13 @@
             </div>
         </div>
     </div>
+
     <!-- TOAST -->
     <div id="toast">
         <i class="fa-solid fa-check-circle"></i>
         <span id="toast-message"></span>
     </div>
+
     <!-- PRODUCT MODAL -->
     <div id="product-modal" class="modal">
         <div class="modal-content">
@@ -285,6 +295,7 @@
             </div>
         </div>
     </div>
+
     <!-- BASKET MODAL -->
     <div id="basket-modal" class="modal">
         <div class="modal-content" style="max-width: 720px;">
@@ -304,6 +315,7 @@
             </div>
         </div>
     </div>
+
     <!-- QUICK ORDER MODAL -->
     <div id="quick-order-modal" class="modal">
         <div class="modal-content" style="max-width: 920px;">
@@ -316,6 +328,7 @@
             </div>
         </div>
     </div>
+
     <!-- COMPARE MODAL -->
     <div id="compare-modal" class="modal">
         <div class="modal-content" style="max-width: 1100px; max-height: 95vh;">
@@ -348,6 +361,7 @@
             </div>
         </div>
     </div>
+
     <!-- SERVICES MODAL -->
     <div id="services-modal" class="modal">
         <div class="modal-content max-w-5xl">
@@ -360,6 +374,7 @@
             </div>
         </div>
     </div>
+
     <!-- EMPLOYEE MODAL -->
     <div id="employee-modal">
         <div class="modal-content">
@@ -370,6 +385,7 @@
             <div id="employee-detail-content" class="text-zinc-900"></div>
         </div>
     </div>
+
     <!-- PROMO POPUP -->
     <div id="promo-popup" class="fixed inset-0 bg-black/80 hidden flex items-center justify-center z-[100000]">
         <div class="bg-white text-black rounded-3xl max-w-md w-full mx-4 overflow-hidden relative">
@@ -393,6 +409,7 @@
         let currentCompare2 = null;
         let currentHeroIndex = 0;
         let isPairedPromoActive = false;
+
         const heroMessages = [
             "Style Meets Technology in Kabwe",
             "Trendy Phones & Accessories That Turn Heads",
@@ -815,12 +832,15 @@
             }
         }
 
-        // FORCE DESKTOP VIEWPORT ON EVERY DEVICE (phone, tablet, desktop) with normal zoom
+        // KEY FIX: Dynamic desktop scaling for normal zoom on all devices
         function forceDesktopViewport() {
             const meta = document.querySelector('meta[name="viewport"]');
-            if (meta) {
-                meta.setAttribute('content', 'width=1280, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no');
-            }
+            if (!meta) return;
+            const deviceWidth = window.screen.width || window.innerWidth || 1280;
+            const desiredWidth = 1280;
+            let scale = deviceWidth / desiredWidth;
+            scale = Math.min(scale, 1.0); // Never scale above 100%
+            meta.setAttribute('content', `width=${desiredWidth}, initial-scale=${scale.toFixed(3)}, maximum-scale=2.5, user-scalable=yes`);
         }
 
         window.onload = function() {
@@ -828,6 +848,7 @@
             loadData();
         };
 
+        // Close modals when clicking outside
         document.getElementById('employee-modal').addEventListener('click', function(e) {
             if (e.target === this) closeEmployeeModal();
         });
