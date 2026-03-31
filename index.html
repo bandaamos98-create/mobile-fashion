@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- DESKTOP MODE LIKE BRITO MOBILE - Normal zoom + proper scaling on tablet -->
+    <!-- DESKTOP MODE - Exact Brito Mobile behavior for search bar and scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <title>Mobile Fashion Enterprise | Trendy Phones, Laptops & Accessories</title>
@@ -95,7 +95,7 @@
         <a id="topbar-link" class="flex items-center justify-center gap-2 text-white"></a>
     </div>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR - Exact Brito style for search bar -->
     <nav class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-[1280px] mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
@@ -119,6 +119,7 @@
                     <button onclick="toggleMobileMenu()" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
                 </div>
             </div>
+            <!-- Mobile Search - Brito style -->
             <div class="sm:hidden mt-4 relative">
                 <input type="text" id="search-input-mobile" placeholder="Search trendy phones & accessories..." onkeyup="handleSearch(event)"
                        class="w-full bg-zinc-900 border border-zinc-700 focus:border-orange-500 rounded-3xl py-3 px-5 pl-12 text-sm focus:outline-none">
@@ -281,7 +282,8 @@
                             <a id="modal-buy-btn" href="#" target="_blank" class="btn-orange text-white text-center py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-2">
                                 <i class="fa-brands fa-whatsapp"></i> Buy via WhatsApp
                             </a>
-                            <button onclick="addToBasketFromModal()" id="modal-add-btn" class="bg-zinc-900 hover:bg-black text-white text-center py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-2 transition-all">
+                            <button onclick="addToBasketFromModal()" id="modal-add-btn"
+                                    class="bg-zinc-900 hover:bg-black text-white text-center py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-2 transition-all">
                                 <i class="fa-solid fa-cart-plus"></i> Add to Basket
                             </button>
                         </div>
@@ -825,14 +827,14 @@
             }
         }
 
-        // BRITO-STYLE DESKTOP VIEWPORT FIX - Prevents shrinking on tablet
+        // BRITO EXACT VIEWPORT + SCALING (this fixes tablet search bar shrinking)
         function forceDesktopViewport() {
             const meta = document.querySelector('meta[name="viewport"]');
             if (!meta) return;
             const deviceWidth = window.screen.width || window.innerWidth || 1280;
             const desiredWidth = 1280;
             let scale = deviceWidth / desiredWidth;
-            scale = Math.min(scale, 1.0); // Never bigger than 100%
+            scale = Math.min(scale, 1.0); // prevent overscaling
             meta.setAttribute('content', `width=${desiredWidth}, initial-scale=${scale.toFixed(3)}, maximum-scale=2.5, user-scalable=yes`);
         }
 
